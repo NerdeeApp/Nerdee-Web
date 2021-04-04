@@ -10,7 +10,7 @@
 ##                 VARIABLES                ##
 ##############################################
 */
-$background: #181818;
+$background: #27006e;
 
 /*
 ##############################################
@@ -20,6 +20,8 @@ $background: #181818;
 body {
 	margin: 0;
 	padding: 0;
+
+	background-color: $background;
 }
 
 /*
@@ -45,4 +47,18 @@ nav img {
 ##                 MAIN BODY                ##
 ##############################################
 */
-/* Nothing here yet */
+
+#backgrd {
+	width: 100vw;
+	height: 100vh;
+
+	background-image: url("../images/SVG/Blobs.svg");
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+@media screen and (max-width: 415px) {
+	#backgrd {
+		background-image: url("../images/SVG/BlobsMobile.svg");
+	}
+}
