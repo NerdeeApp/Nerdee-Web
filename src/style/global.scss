@@ -7,6 +7,13 @@
 
 /*
 ##############################################
+##                  IMPORTS                 ##
+##############################################
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&family=Open+Sans:wght@700&display=swap');
+
+/*
+##############################################
 ##                 VARIABLES                ##
 ##############################################
 */
@@ -52,9 +59,22 @@ nav img {
 	width: 100vw;
 	height: 100vh;
 
+	position: fixed;
+
+	top: 0;
+	left: 0;
+
 	background-image: url("../images/SVG/Blobs.svg");
 	background-repeat: no-repeat;
 	background-size: auto;
+
+	color: #ffffff;
+
+	display: block;
+	text-align: left;
+
+	margin: 0;
+	padding: 0;
 }
 
 @media screen and (max-width: 415px) {
