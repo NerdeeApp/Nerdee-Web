@@ -1,0 +1,14 @@
+#preloader {
+	background-image: linear-gradient(45deg, #5d00ff, #27006e);
+	background-image: -webkit-linear-gradient(45deg, #5d00ff, #27006e);
+	background-image: -moz-linear-gradient(45deg, #5d00ff, #27006e);
+	background-color: #5d00ff;
+
+	width: 100vw;
+	height: 100vh;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999999999999999999999999;
+}
