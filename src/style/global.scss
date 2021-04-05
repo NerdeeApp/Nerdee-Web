@@ -107,7 +107,7 @@ nav img {
 	left: 50%;
 }
 
-#backgrd button {
+#backgrd #joinNow {
 	padding: 1em 2em;
 	background-color: #160048;
 
@@ -132,9 +132,9 @@ nav img {
 	transition: all 100ms ease;
 }
 
-#backgrd button:hover,
-#backgrd button:focus,
-#backgrd button:active {
+#backgrd #joinNow:hover,
+#backgrd #joinNow:focus,
+#backgrd #joinNow:active {
 	box-shadow: -5px -5px 20px rgba(255, 255, 255, 0.14) inset;
 	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.29) inset;
 
@@ -164,5 +164,11 @@ nav img {
 	#backgrd h1 #subtext {
 		transform: translate(-50%, -50%);
 		left: 50%;
+	}
+
+	#backgrd #joinNow {
+		font-size: 1em;
+
+		top: 10%;
 	}
 }
