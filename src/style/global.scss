@@ -64,9 +64,8 @@ nav img {
 	top: 0;
 	left: 0;
 
-	background-image: url("../images/SVG/Blobs.svg");
-	background-repeat: no-repeat;
-	background-size: auto;
+	background: url("../images/PNG/Blobs.png") no-repeat center center fixed;
+	background-size: cover;
 
 	color: #ffffff;
 
@@ -77,8 +76,61 @@ nav img {
 	padding: 0;
 }
 
+#backgrd h1 {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+
+	font-size: 15em;
+
+	width: 32vw;
+
+	position: fixed;
+	left: 25%;
+	top: 25%;
+
+	transform: translate(-50%, -50%);
+}
+
+#backgrd h1 #subtext {
+	font-family: 'Montserrat';
+	font-weight: 300;
+
+	font-size: 0.4em;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	width: 9.7em;
+
+	text-align: center;
+
+	position: relative;
+	transform:  translateY(-50%);
+}
+
 @media screen and (max-width: 415px) {
 	#backgrd {
 		background-image: url("../images/SVG/BlobsMobile.svg");
+		text-align: center;
+	}
+
+	#backgrd h1 {
+		top: 10%;
+		left: 50%;
+
+		position: relative;
+		text-align: center;
+
+		font-size: 5em;
+
+		transform: translate(-50%, 0);
+
+		width: 100%;
+	}
+
+	#backgrd h1 #subtext {
+		transform: translate(-50%, -50%);
+		left: 50%;
 	}
 }
