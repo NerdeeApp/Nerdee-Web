@@ -26,9 +26,17 @@ function App() {
 						<span>H</span>
 					</span>
 				</h1>
+
+				<button id='joinNow' onClick={test}>
+					JOIN NOW
+				</button>
 			</div>
 		</div>
 	);
 }
 
 export default App;
+
+const test = () => {
+	alert('This site is not working yet. Please come back soon for testing');
+};

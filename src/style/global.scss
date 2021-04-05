@@ -74,21 +74,18 @@ nav img {
 
 	margin: 0;
 	padding: 0;
+
+	text-align: center;
+
+	z-index: 10;
 }
 
 #backgrd h1 {
 	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
-
 	font-size: 15em;
 
-	width: 32vw;
-
-	position: fixed;
-	left: 25%;
-	top: 25%;
-
-	transform: translate(-50%, -50%);
+	width: 100%;
 }
 
 #backgrd h1 #subtext {
@@ -106,10 +103,45 @@ nav img {
 	text-align: center;
 
 	position: relative;
-	transform:  translateY(-50%);
+	transform:  translate(-50%, -50%);
+	left: 50%;
 }
 
-@media screen and (max-width: 415px) {
+#backgrd button {
+	padding: 1em 2em;
+	background-color: #160048;
+
+	color: #fff;
+
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 1.5em;
+
+	border: #4200B7 5px solid;
+	border-radius: 100vh;
+	outline: none;
+
+	box-shadow: -5px -5px 20px rgba(255, 255, 255, 0.14);
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.29);
+
+	transform: translateY(-50%);
+
+	position: relative;
+	top: -5em;
+
+	transition: all 100ms ease;
+}
+
+#backgrd button:hover,
+#backgrd button:focus,
+#backgrd button:active {
+	box-shadow: -5px -5px 20px rgba(255, 255, 255, 0.14) inset;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.29) inset;
+
+	background-color: #30009e;
+}
+
+@media screen and (max-width: 768px) {
 	#backgrd {
 		background-image: url("../images/SVG/BlobsMobile.svg");
 		text-align: center;
