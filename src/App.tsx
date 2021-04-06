@@ -11,7 +11,6 @@ const App = () => {
 	return (
 		<Router>
 			<Route path='/' component={Home} />
-			<Route path='/eggy' component={Home} />
 		</Router>
 	);
 };
