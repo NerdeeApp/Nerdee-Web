@@ -22,7 +22,6 @@ export class Home extends Component {
 							<span>H</span>
 						</span>
 					</h1>
-
 					<button id='joinNow' onClick={test}>
 						JOIN NOW
 					</button>

@@ -3,15 +3,22 @@ import './style/main.scss';
 import './style/global.scss';
 import './style/preloader.scss';
 
-import { Home } from './pages';
+import { Home, Error404 } from './pages';
 
+// eslint-disable-next-line
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
 
 const App = () => {
 	return (
 		<Router>
-			<Route path='/' component={Home} />
-			<Route path='/eggy' component={Home} />
+			<Switch>
+				<Route exact path='/' component={Home} />
+				<Route exact path='/users/:userid' component={Home} />
+
+				{/* ! Errors */}
+				<Route exact path='/404' component={Error404} />
+				<Redirect to='/404' />
+			</Switch>
 		</Router>
 	);
 };
