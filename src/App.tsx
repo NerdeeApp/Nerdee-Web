@@ -2,41 +2,18 @@ import React from 'react';
 import './style/main.scss';
 import './style/global.scss';
 import './style/preloader.scss';
-// import BlobsMobile from './images/SVG/BlobsMobile.svg';
-// import { Navbar, Preloader } from './components';
 
-function App() {
+import { Home } from './pages';
+
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
+
+const App = () => {
 	return (
-		<div className='App'>
-			<header className='App-header' />
-			<div id='backgrd'>
-				<h1>
-					NERDEE<br />
-					<span id='subtext'>
-						<span>D</span>
-						<span>A</span>
-						<span>T</span>
-						<span>E</span>
-						<span> </span>
-						<span>A</span>
-						<span> </span>
-						<span>T</span>
-						<span>E</span>
-						<span>C</span>
-						<span>H</span>
-					</span>
-				</h1>
-
-				<button id='joinNow' onClick={test}>
-					JOIN NOW
-				</button>
-			</div>
-		</div>
+		<Router>
+			<Route path='/' component={Home} />
+			<Route path='/eggy' component={Home} />
+		</Router>
 	);
-}
+};
 
 export default App;
-
-const test = () => {
-	alert('This site is not working yet. Please come back soon for testing');
-};

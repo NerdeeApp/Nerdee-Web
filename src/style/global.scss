@@ -57,7 +57,7 @@ nav img {
 
 #backgrd {
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 
 	position: fixed;
 
@@ -78,6 +78,8 @@ nav img {
 	text-align: center;
 
 	z-index: 10;
+
+	overflow-y: scroll;
 }
 
 #backgrd h1 {
