@@ -199,3 +199,75 @@ nav img {
 	background-color: #30009e;
 	border-radius: 0;
 }
+
+/*
+##############################################
+##                   POPUP                  ##
+##############################################
+*/
+
+.popup {
+	font-family: 'Montserrat';
+
+	z-index: 1000;
+
+	min-width: 10vw;
+	min-height: 10vh;
+
+	max-width: 60vw;
+	max-height: 60vh;
+
+	padding: 5ch;
+
+	background-color: #fff;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%, -50%);
+
+	box-shadow: 5px 5px 100px 5px #000;
+
+	color: #fff;
+
+	background-image: linear-gradient(to right, $background, #30009e);
+
+	border: 2px solid #000;
+	margin: 0;
+}
+
+.popup #title {
+	text-align: center;
+	font-size: 3em;
+	text-decoration: underline;
+}
+
+.popup p {
+	max-width: 100ch;
+
+	font-size: 1.5em;
+}
+
+.popup #close {
+	cursor: pointer;
+	float: right;
+
+	filter: brightness(10000000%);
+}
+
+#blur {
+	z-index: 999;
+
+	width: 100vw;
+	height: 100vw;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+
+	background-color: transparent;
+
+	backdrop-filter: blur(10px);
+}

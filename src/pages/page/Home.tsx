@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { PopupModal } from '../../components';
 
 export class Home extends Component {
 	render() {
 		return (
 			<div className='App'>
+				<title>Nerdee Home</title>
 				<header className='App-header' />
 				<div id='backgrd'>
 					<h1>
@@ -25,12 +27,17 @@ export class Home extends Component {
 					<button id='joinNow' onClick={test}>
 						JOIN NOW
 					</button>
+
+					<PopupModal
+						title='This site is not currently live!'
+						content='This site is not currently live as it is in development. Please return soon as it will be active as soon as possible.'
+					/>
 				</div>
 			</div>
 		);
 	}
 }
 
-const test = () => {
-	alert('This site is not working yet. Please come back soon for testing');
+let test = () => {
+	alert('This site is currently in development so is not live. Please return soon to test');
 };
