@@ -180,6 +180,23 @@ nav img {
 
 		top: 10%;
 	}
+
+	.popup #close {
+		width: 2.5em;
+
+		position: relative;
+		top: -2.5em;
+		right: -2.5em
+	}
+
+	.popup #title {
+		font-size: 1.5em !important;
+		text-align: left !important;
+	}
+
+	.popup p {
+		text-align: left !important;
+	}
 }
 
 ::-webkit-scrollbar {
@@ -235,6 +252,7 @@ nav img {
 
 	border: 2px solid #000;
 	margin: 0;
+	overflow-y: scroll;
 }
 
 .popup #title {
@@ -254,6 +272,12 @@ nav img {
 	float: right;
 
 	filter: brightness(10000000%);
+
+	position: relative;
+	right: -2.5em;
+	top: -1.5em;
+
+	height: 2em;
 }
 
 #blur {
