@@ -101,6 +101,13 @@
     animation: bob 2.5s infinite;
 }
 
+#backgrd #scroll__down:hover,
+#backgrd #scroll__down:focus {
+    animation: up .5s;
+    -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+    animation-fill-mode: forwards;
+}
+
 #about {
     position: relative;
     top: 0;
@@ -200,5 +207,15 @@
 
     100% {
         transform: translate(-50%, 0px);
+    }
+}
+
+@keyframes up {
+    0% {
+        transform: rotate(0deg) translate(-50%, 0);
+    }
+
+    100% {
+        transform: rotate(180deg) translate(50%, 20px);
     }
 }
