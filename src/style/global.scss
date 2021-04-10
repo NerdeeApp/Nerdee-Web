@@ -30,11 +30,16 @@ $background: #27006e;
 }
 
 
-body {
+body,
+html {
 	margin: 0;
 	padding: 0;
 
 	background-color: $background;
+
+	width: 100vw;
+
+	overflow-x: hidden;
 }
 
 /*
@@ -61,126 +66,7 @@ nav img {
 ##############################################
 */
 
-#backgrd {
-	width: 100vw;
-	height: 100%;
-	min-height: 100vh;
-
-	position: fixed;
-
-	top: 0;
-	left: 0;
-
-	background: url("../images/PNG/Blobs.png") no-repeat center center fixed;
-	background-size: cover;
-
-	color: #ffffff;
-
-	display: block;
-	text-align: left;
-
-	margin: 0;
-	padding: 0;
-
-	text-align: center;
-
-	z-index: 10;
-
-	overflow-y: scroll;
-}
-
-#backgrd h1 {
-	font-family: "Open Sans", sans-serif;
-	font-weight: 700;
-	font-size: 15em;
-
-	width: 100%;
-}
-
-#backgrd h1 #subtext {
-	font-family: 'Montserrat';
-	font-weight: 300;
-
-	font-size: 0.4em;
-
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-
-	width: 9.7em;
-
-	text-align: center;
-
-	position: relative;
-	transform:  translate(-50%, -50%);
-	left: 50%;
-}
-
-#backgrd #joinNow {
-	padding: 1em 2em;
-	background-color: #160048;
-
-	color: #fff;
-
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
-	font-size: 1.5em;
-
-	border: #4200B7 5px solid;
-	border-radius: 100vh;
-	outline: none;
-
-	box-shadow: -5px -5px 20px rgba(255, 255, 255, 0.14);
-	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.29);
-
-	transform: translateY(-50%);
-
-	position: relative;
-	top: -5em;
-
-	transition: all 100ms ease;
-}
-
-#backgrd #joinNow:hover,
-#backgrd #joinNow:focus,
-#backgrd #joinNow:active {
-	box-shadow: -5px -5px 20px rgba(255, 255, 255, 0.14) inset;
-	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.29) inset;
-
-	background-color: #30009e;
-}
-
 @media screen and (max-width: 768px) {
-	#backgrd {
-		background-image: url("../images/SVG/BlobsMobile.svg");
-		text-align: center;
-	}
-
-	#backgrd h1 {
-		top: 10%;
-		left: 50%;
-
-		position: relative;
-		text-align: center;
-
-		font-size: 5em;
-
-		transform: translate(-50%, 0);
-
-		width: 100%;
-	}
-
-	#backgrd h1 #subtext {
-		transform: translate(-50%, -50%);
-		left: 50%;
-	}
-
-	#backgrd #joinNow {
-		font-size: 1em;
-
-		top: 10%;
-	}
-
 	.popup #close {
 		width: 2.5em;
 
@@ -215,83 +101,4 @@ nav img {
 ::-webkit-scrollbar-thumb:hover {
 	background-color: #30009e;
 	border-radius: 0;
-}
-
-/*
-##############################################
-##                   POPUP                  ##
-##############################################
-*/
-
-.popup {
-	font-family: 'Montserrat';
-
-	z-index: 1000;
-
-	min-width: 10vw;
-	min-height: 10vh;
-
-	max-width: 60vw;
-	max-height: 60vh;
-
-	padding: 5ch;
-
-	background-color: #fff;
-
-	position: fixed;
-	top: 50%;
-	left: 50%;
-
-	transform: translate(-50%, -50%);
-
-	box-shadow: 5px 5px 100px 5px #000;
-
-	color: #fff;
-
-	background-image: linear-gradient(to right, $background, #30009e);
-
-	border: 2px solid #000;
-	margin: 0;
-	overflow-y: scroll;
-}
-
-.popup #title {
-	text-align: center;
-	font-size: 3em;
-	text-decoration: underline;
-}
-
-.popup p {
-	max-width: 100ch;
-
-	font-size: 1.5em;
-}
-
-.popup #close {
-	cursor: pointer;
-	float: right;
-
-	filter: brightness(10000000%);
-
-	position: relative;
-	right: -2.5em;
-	top: -1.5em;
-
-	height: 2em;
-}
-
-#blur {
-	z-index: 999;
-
-	width: 100vw;
-	height: 100vw;
-
-	position: fixed;
-	top: 0;
-	left: 0;
-
-
-	background-color: transparent;
-
-	backdrop-filter: blur(10px);
 }

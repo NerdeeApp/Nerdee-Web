@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { PopupModal } from '../../components';
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies();
@@ -44,10 +43,23 @@ export class Home extends Component {
 						JOIN NOW
 					</button>
 
-					<PopupModal
-						title='This site is not currently live!'
-						content='This site is not currently live as it is in development. Please return soon as it will be active as soon as possible.'
-					/>
+					<img src='/images/icons/down.svg' alt='' id='scroll__down' />
+				</div>
+
+				<div id='about'>
+					<h1 id='title'>ABOUT US</h1>
+					<p id='info'>
+						<b>Our Goals</b>
+						<br />
+						Here at Nerdee, we aim for our clients to enjoy life with someone who has similar thoughts,
+						similar interests and similar experiences.
+						<br />
+						<br />
+						<b>What about my data? What will you use it for?</b>
+						<br />
+						We only use data for finding you your best partner, <b>ALL</b> data is end to end encrypted
+						using the AES256 algorithm so none of your data is accessable without your permission.
+					</p>
 				</div>
 
 				{console.log(cookies.get('test'))}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './style/main.scss';
+import './style/home.scss';
 import './style/global.scss';
 import './style/preloader.scss';
 

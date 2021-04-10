@@ -1,0 +1,204 @@
+#backgrd {
+    max-width: 100%;
+	width: 100vw;
+	height: 100%;
+	min-height: 100vh;
+
+	position: relative;
+
+	top: 0;
+	left: 0;
+
+	background: url("../images/PNG/Blobs.png") no-repeat center center fixed;
+	background-size: cover;
+
+	color: #ffffff;
+
+	display: block;
+	text-align: left;
+
+	margin: 0;
+	padding: 0;
+
+	text-align: center;
+
+	z-index: 10;
+
+	overflow-y: scroll;
+}
+
+#backgrd h1 {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+	font-size: 15em;
+
+	width: 100%;
+}
+
+#backgrd h1 #subtext {
+	font-family: 'Montserrat';
+	font-weight: 300;
+
+	font-size: 0.4em;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	width: 9.7em;
+
+	text-align: center;
+
+	position: relative;
+	transform:  translate(-50%, -50%);
+	left: 50%;
+}
+
+#backgrd #joinNow {
+	padding: 1em 2em;
+	background-color: #160048;
+
+	color: #fff;
+
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 1.5em;
+
+	border: #4200B7 5px solid;
+	border-radius: 100vh;
+	outline: none;
+
+	box-shadow: -5px -5px 20px rgba(255, 255, 255, 0.14);
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.29);
+
+	transform: translateY(-50%);
+
+	position: relative;
+	top: -5em;
+
+	transition: all 100ms ease;
+}
+
+#backgrd #joinNow:hover,
+#backgrd #joinNow:focus,
+#backgrd #joinNow:active {
+	box-shadow: -5px -5px 20px rgba(255, 255, 255, 0.14) inset;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.29) inset;
+
+	background-color: #30009e;
+}
+
+#backgrd #scroll__down {
+    position: absolute;
+    height: 4.5em;
+    bottom: 0;
+    left: 50%;
+
+    transform: translate(-50%, 0);
+
+    cursor: pointer;
+
+    animation: bob 2.5s infinite;
+}
+
+#about {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    max-width: 100%;
+
+    height: 100%;
+    min-height: 100vh;
+
+    background-color: #4200B7;
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+
+    padding: 0;
+    margin: 0;
+}
+
+#about #title {
+    font-family: "Open Sans", sans-serif;
+    color: #ffffff;
+
+    font-size: 4em;
+
+    position: relative;
+    text-align: center;
+}
+
+#about #info {
+    font-family: 'Montserrat', sans-serif;
+
+    font-weight: 300;
+    font-size: 1.2em;
+
+    height: 100%;
+    max-width: calc(50vw - 40px);
+    width: 200ch;
+
+    padding: 20px;
+
+    background-color: transparent;
+    position: relative;
+
+    top: 0;
+    left: 0%;
+
+    word-wrap: break-word;
+}
+
+@media screen and (max-width: 768px) {
+	#backgrd {
+		background-image: url("../images/SVG/BlobsMobile.svg");
+		text-align: center;
+	}
+
+	#backgrd h1 {
+		top: 10%;
+		left: 50%;
+
+		position: relative;
+		text-align: center;
+
+		font-size: 5em;
+
+		transform: translate(-50%, 0);
+
+		width: 100%;
+	}
+
+	#backgrd h1 #subtext {
+		transform: translate(-50%, -50%);
+		left: 50%;
+	}
+
+	#backgrd #joinNow {
+		font-size: 1em;
+
+		top: 10%;
+	}
+
+    #about #info {
+        max-width: calc(100vw - 40px);
+    }
+}
+
+@keyframes bob {
+    0% {
+        transform: translate(-50%, 0px);
+    }
+
+    50% {
+        transform: translate(-50%, -20px);
+    }
+
+    100% {
+        transform: translate(-50%, 0px);
+    }
+}
