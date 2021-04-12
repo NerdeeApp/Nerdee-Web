@@ -49,7 +49,7 @@ All essential features should have the prefix `essential-(name)` or `urgent-(nam
 e.g. an essential security fix is needed, team 1 add it as name `essential-bug-fix`. \
 They then open a pull request for the branch to be merged with master.  
 
-# Do not push directly to master, make a new branch
+# Do not push directly to master, make a new branch. All approved commits will go to testing branch first before release.
 
 ---
 <a id="help"></a>
