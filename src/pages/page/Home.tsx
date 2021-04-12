@@ -22,10 +22,10 @@ export class Home extends Component {
 
 				<title>Nerdee Home</title>
 				<header className='App-header' />
-				<div id='backgrd'>
+				<div className='backgrd'>
 					<h1>
 						NERDEE<br />
-						<span id='subtext'>
+						<span className='subtext'>
 							<span>D</span>
 							<span>A</span>
 							<span>T</span>
@@ -43,13 +43,13 @@ export class Home extends Component {
 						JOIN NOW
 					</button>
 
-					<img src='/images/icons/down.svg' alt='' id='scroll__down' onClick={scroll__down} />
+					<img src='/images/icons/down.svg' alt='' className='scroll__down' onClick={scroll__down} />
 				</div>
 
-				<div id='about'>
-					<h1 id='title'>ABOUT US</h1>
-					<p id='info'>
-						<span id="title__bar"><h2><b>FAQ</b></h2></span>
+				<div className='about'>
+					<h1 className='title'>ABOUT US</h1>
+					<p className='info'>
+						<span className="title__bar"><h2><b>FAQ</b></h2></span>
 						<b>Our Goals.</b>
 						<br />
 						Here at Nerdee, we aim for our clients to enjoy life with someone who has similar thoughts,

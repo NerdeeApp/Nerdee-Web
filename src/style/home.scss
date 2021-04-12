@@ -1,4 +1,4 @@
-#backgrd {
+.backgrd {
     max-width: 100%;
 	width: 100vw;
 	height: 100%;
@@ -27,7 +27,7 @@
 	overflow-y: scroll;
 }
 
-#backgrd h1 {
+.backgrd h1 {
 	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
 	font-size: 15em;
@@ -35,7 +35,7 @@
 	width: 100%;
 }
 
-#backgrd h1 #subtext {
+.backgrd h1 .subtext {
 	font-family: 'Montserrat';
 	font-weight: 300;
 
@@ -54,7 +54,7 @@
 	left: 50%;
 }
 
-#backgrd #joinNow {
+.backgrd .joinNow {
 	padding: 1em 2em;
 	background-color: #160048;
 
@@ -79,16 +79,16 @@
 	transition: all 100ms ease;
 }
 
-#backgrd #joinNow:hover,
-#backgrd #joinNow:focus,
-#backgrd #joinNow:active {
+.backgrd .joinNow:hover,
+.backgrd .joinNow:focus,
+.backgrd .joinNow:active {
 	box-shadow: -5px -5px 20px rgba(255, 255, 255, 0.14) inset;
 	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.29) inset;
 
 	background-color: #30009e;
 }
 
-#backgrd #scroll__down {
+.backgrd .scroll__down {
     position: absolute;
     height: 4.5em;
     bottom: 0;
@@ -103,14 +103,14 @@
 	z-index: 5000;
 }
 
-#backgrd #scroll__down:hover,
-#backgrd #scroll__down:focus {
+.backgrd .scroll__down:hover,
+.backgrd .scroll__down:focus {
     animation: up 500ms;
     -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
     animation-fill-mode: forwards;
 }
 
-#about {
+.about {
     position: relative;
     top: 0;
     left: 0;
@@ -135,7 +135,7 @@
 	z-index: 100;
 }
 
-#about #title {
+.about .title {
     font-family: "Open Sans", sans-serif;
     color: #ffffff;
 
@@ -145,7 +145,7 @@
     text-align: center;
 }
 
-#about #info {
+.about .info {
     font-family: 'Montserrat', sans-serif;
 
     font-weight: 300;
@@ -176,12 +176,12 @@
 }
 
 @media screen and (max-width: 768px) {
-	#backgrd {
+	.backgrd {
 		background-image: url("../images/SVG/BlobsMobile.svg");
 		text-align: center;
 	}
 
-	#backgrd h1 {
+	.backgrd h1 {
 		top: 10%;
 		left: 50%;
 
@@ -195,30 +195,30 @@
 		width: 100%;
 	}
 
-	#backgrd h1 #subtext {
+	.backgrd h1 .subtext {
 		transform: translate(-50%, -50%);
 		left: 50%;
 	}
 
-	#backgrd #joinNow {
+	.backgrd .joinNow {
 		font-size: 1em;
 
 		top: 10%;
 	}
 
-    #about #info {
+    .about .info {
         max-width: calc(100vw - 40px);
     }
 
-    #about #us {
+    .about .us {
         max-width: calc(100vw - 40px);
     }
 
-	#backgrd #scroll__down {
+	.backgrd .scroll__down {
 		top: calc(100vh - 8.5em);
 	}
 
-	#about #title__bar {
+	.about .title__bar {
 		text-align: center;
 	}
 }
