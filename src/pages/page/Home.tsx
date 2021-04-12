@@ -39,7 +39,7 @@ export class Home extends Component {
 							<span>H</span>
 						</span>
 					</h1>
-					<button id='joinNow' onClick={alrt}>
+					<button className='joinNow' onClick={alrt}>
 						JOIN NOW
 					</button>
 
