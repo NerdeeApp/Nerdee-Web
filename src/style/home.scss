@@ -1,32 +1,3 @@
-#backgrd {
-    max-width: 100%;
-	width: 100vw;
-	height: 100%;
-	min-height: 100vh;
-
-	position: relative;
-
-	top: 0;
-	left: 0;
-
-	background: url("../images/PNG/Blobs.png") no-repeat center center fixed;
-	background-size: cover;
-
-	color: #ffffff;
-
-	display: block;
-	text-align: left;
-
-	margin: 0;
-	padding: 0;
-
-	text-align: center;
-
-	z-index: 10;
-
-	overflow-y: scroll;
-}
-
 #backgrd h1 {
 	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
@@ -45,12 +16,12 @@
 	flex-direction: row;
 	justify-content: space-between;
 
-	width: 9.7em;
+	width: calc(9.7em - 10px);;
 
 	text-align: center;
 
 	position: relative;
-	transform:  translate(-50%, -50%);
+	transform:  translate(calc(-50% + 5px), -50%);
 	left: 50%;
 }
 
@@ -77,6 +48,8 @@
 	top: -5em;
 
 	transition: all 100ms ease;
+
+	cursor: pointer;
 }
 
 #backgrd #joinNow:hover,
@@ -101,13 +74,6 @@
     animation: bob 2.5s infinite;
 
 	z-index: 5000;
-}
-
-#backgrd #scroll__down:hover,
-#backgrd #scroll__down:focus {
-    animation: up 500ms;
-    -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
-    animation-fill-mode: forwards;
 }
 
 #about {
@@ -234,19 +200,5 @@
 
     100% {
         transform: translate(-50%, 0px);
-    }
-}
-
-@keyframes up {
-    0% {
-        transform: translateY(0) translateX(-50%);
-    }
-
-	10% {
-		transform: translateY(0) translateX(-50%);
-	}
-
-    100% {
-        transform: translateY(5px) translateX(-50%);
     }
 }

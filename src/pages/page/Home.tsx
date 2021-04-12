@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Redirect, withRouter } from 'react-router-dom';
 import Cookies from 'universal-cookie';
+import '../../style/home.scss';
 
 const cookies = new Cookies();
 var d = new Date();
@@ -78,7 +80,7 @@ export class Home extends Component {
 }
 
 let alrt = () => {
-	alert('This site is currently in development so is not live. Please return soon to test');
+	return window.location.href = "/register"
 };
 
 let scroll__down = () => {
