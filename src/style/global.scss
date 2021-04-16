@@ -10,7 +10,7 @@
 ##                  IMPORTS                 ##
 ##############################################
 */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&family=Open+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&family=Open+Sans:wght@400;700&display=swap');
 
 /*
 ##############################################
@@ -18,6 +18,7 @@
 ##############################################
 */
 $background: #27006e;
+$navheight: 6vh;
 
 /*
 ##############################################
@@ -50,6 +51,21 @@ html {
 nav {
 	margin: 0;
 	padding: 0;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100vw;
+	height: $navheight;
+
+	background-color: #4200B7aa;
+
+	z-index: 999999;
+
+	backdrop-filter: blur(10px);
+
+	font-family: 'Open Sans', sans-serif;
 }
 
 nav a {
@@ -57,7 +73,76 @@ nav a {
 }
 
 nav img {
-	height: 10vh;
+	height: $navheight;
+}
+
+nav .nav__list {
+	list-style: none;
+	width: 30vw;
+
+	height: $navheight;
+
+	background-color: transparent;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+
+	position: absolute;
+	top: 0;
+	right: 20vw;
+
+	padding: 0;
+	margin: 0;
+
+	font-size: 1.25em;
+
+	text-transform: uppercase;
+}
+
+nav .nav__list li a {
+	text-decoration: none;
+}
+
+nav .user__func {
+	width: 20vw;
+	height: $navheight;
+
+	background-color: transparent;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+
+	font-size: 1.25em;
+}
+
+nav .user__func a {
+	text-decoration: none;
+
+	text-transform: uppercase;
+
+	padding: 0.25em 0.5em;
+	text-align: center;
+
+	border-radius: 100em;
+
+	font-size: 0.75em;
+
+	font-weight: 100;
+}
+
+@media screen and (max-width: 768px) {
+	nav {
+		height: 7vh;
+	}
 }
 
 /*
@@ -95,25 +180,6 @@ nav img {
 	overflow-y: scroll;
 }
 
-@media screen and (max-width: 768px) {
-	.popup #close {
-		width: 2.5em;
-
-		position: relative;
-		top: -2.5em;
-		right: -2.5em
-	}
-
-	.popup #title {
-		font-size: 1.5em !important;
-		text-align: left !important;
-	}
-
-	.popup p {
-		text-align: left !important;
-	}
-}
-
 ::-webkit-scrollbar {
 	width: 10px;
 }
@@ -124,7 +190,7 @@ nav img {
 
 ::-webkit-scrollbar-thumb {
 	background-color: #4200B7;
-	border-radius: 100px;
+	border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {

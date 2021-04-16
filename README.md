@@ -36,7 +36,7 @@ Run `yarn start` to make sure your version is working.
 Once the app is working, you can run `yarn run build` to create an optimised version.  
 To make the build open, you can run
 - `yarn global add serve`
-- serve -p 80 -s build`  
+- `serve -p 80 -s build`  
 
 with port `80` being the port accessed from the browser. The default is port `5000`  
 You can then access the local build in [localhost:80](http://localhost:80/) or whatever port you chose.

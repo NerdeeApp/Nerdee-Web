@@ -16,7 +16,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 
-	width: calc(9.7em - 10px);;
+	width: calc(9.7em - 10px);
 
 	text-align: center;
 
@@ -70,8 +70,6 @@
     transform: translate(-50%, 0);
 
     cursor: pointer;
-
-    animation: bob 2.5s infinite;
 
 	z-index: 5000;
 }
@@ -187,18 +185,4 @@
 	#about #title__bar {
 		text-align: center;
 	}
-}
-
-@keyframes bob {
-    0% {
-        transform: translate(-50%, 0px);
-    }
-
-    50% {
-        transform: translate(-50%, -20px);
-    }
-
-    100% {
-        transform: translate(-50%, 0px);
-    }
 }
