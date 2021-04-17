@@ -73,7 +73,12 @@ nav a {
 }
 
 nav img {
-	height: $navheight;
+	height: calc( 6vh - 20px );
+	transform: translate(0, -50%);
+
+	position: absolute;
+	left: 10px;
+	top: 50%;
 }
 
 nav .nav__list {

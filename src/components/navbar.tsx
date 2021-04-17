@@ -5,7 +5,7 @@ export class Navbar extends Component {
 		return (
 			<nav>
 				<a href='/' id='nav__logo'>
-					<img src='/images/SVG/placeholder.svg' alt='' />
+					<img src='/images/SVG/logo.svg' alt='' />
 				</a>
 
 				{/* <ul className='nav__list'>
