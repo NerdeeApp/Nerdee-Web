@@ -22,7 +22,7 @@ export class Home extends Component {
 					expires: new Date(year, month + 1, day, hour, min, ms)
 				})}
 
-				<title>Nerdee Home</title>
+				<title>Nerdee | The Dating App for Tech Enthusiasts</title>
 				<header className='App-header' />
 				<div id='backgrd'>
 					<h1>
