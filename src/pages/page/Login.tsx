@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { Component, FC } from 'react';
 import { Button, TextField } from '@material-ui/core';
 
 import '../../style/login.scss';
@@ -36,7 +36,7 @@ export const Login: FC<Props> = ({ setToken }) => {
 			<div id='login__frame'>
 				<h1 id='title'>LOGIN</h1>
 				<p id='red'>This does not work yet so dont use</p>
-				<form action='https://api.nerdee.io/action/login' method='POST' id='l__frm'>
+				<form method='https://api.nerdee.io/users/id' id='l__frm'>
 					<TextField id='username' label='Username' variant='filled' type='text' required />
 					<br />
 					<br />
