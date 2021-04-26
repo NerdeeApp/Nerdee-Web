@@ -1,13 +1,35 @@
-import { Component, FC } from 'react';
+import { FC, SyntheticEvent, useState } from 'react';
 import { Button, TextField } from '@material-ui/core';
 
 import '../../style/login.scss';
+import { Redirect } from 'react-router';
 
-interface Props {
-	setToken: any;
-}
+interface props {}
 
-export const Login: FC<Props> = ({ setToken }) => {
+export const Login: FC<props> = () => {
+	const [ username, setUsername ] = useState('');
+	const [ password, setPassword ] = useState('');
+	const [ redirect, setRedirect ] = useState(false);
+
+	const submit = async (e: SyntheticEvent) => {
+		e.preventDefault();
+
+		await fetch('http://localhost/users/action/login', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+			body: JSON.stringify({
+				username,
+				password
+			})
+		});
+
+		setRedirect(true);
+	};
+
+	if (redirect) {
+		return <Redirect to='/home/' />;
+	}
+
 	return (
 		<div className='App'>
 			<title>Nerdee Login</title>
@@ -36,14 +58,32 @@ export const Login: FC<Props> = ({ setToken }) => {
 			<div id='login__frame'>
 				<h1 id='title'>LOGIN</h1>
 				<p id='red'>This does not work yet so dont use</p>
-				<form method='https://api.nerdee.io/users/id' id='l__frm'>
-					<TextField id='username' label='Username' variant='filled' type='text' required />
+				<form onSubmit={submit} id='l__frm'>
+					<TextField
+						name='username'
+						id='username'
+						label='Username'
+						variant='filled'
+						type='text'
+						autoComplete='username'
+						onChange={(e) => setUsername(e.target.value)}
+						required
+					/>
 					<br />
 					<br />
-					<TextField id='password' label='Password' variant='filled' type='password' required />
+					<TextField
+						name='password'
+						id='password'
+						label='Password'
+						variant='filled'
+						type='password'
+						autoComplete='current-password'
+						onChange={(e) => setPassword(e.target.value)}
+						required
+					/>
 					<br />
 					<br />
-					<Button variant='contained' size='large' color='primary' type='submit'>
+					<Button onClick={submit} name='sbmt' variant='contained' size='large' color='primary' type='submit'>
 						Login
 					</Button>
 				</form>

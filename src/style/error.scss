@@ -1,0 +1,53 @@
+.error_title {
+    color: white;
+    font-size: 6em !important;
+
+    font-family: 'Montserrat', sans-serif;
+
+    text-align: center;
+
+    top: 30%;
+    left: 50%;
+
+    position: absolute;
+
+    transform: translate(-50%, -50%);
+}
+
+#joinNow {
+    padding: 1em 2em;
+	background-color: #160048;
+
+	color: #fff;
+
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 1.5em;
+
+	border: #4200B7 5px solid;
+	border-radius: 100vh;
+	outline: none;
+
+	box-shadow: -5px -5px 20px rgba(255, 255, 255, 0.14);
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.29);
+
+	transform: translate(-50%, -50%) !important;
+
+	position: absolute !important;
+	top: 70% !important;
+
+	transition: all 100ms ease;
+
+	cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .error_title {
+        font-size: 2em !important;
+
+        top: 30% !important;
+        left: 50% !important;
+
+        position: absolute !important;
+    }
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../style/error.scss';
 
 export class Error404 extends Component {
 	render() {
@@ -6,8 +7,19 @@ export class Error404 extends Component {
 			<div className='App'>
 				<title>Error 404</title>
 				<header className='App-header' />
-				<h1>Damn, the developers did not add that page. I can't find it, sorry</h1>
+				<div id='backgrd'>
+					<h1 className='error_title'>
+						404 Not Found;<br />Have you found your date yet?
+					</h1>
+					<button id='joinNow' onClick={alrt}>
+						Go Home
+					</button>
+				</div>
 			</div>
 		);
 	}
 }
+
+let alrt = () => {
+	return (window.location.href = '/');
+};

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, TextField } from '@material-ui/core';
+import {} from '@material-ui/pickers';
 
 export class Register extends Component {
 	render() {
@@ -31,14 +32,121 @@ export class Register extends Component {
 				<div id='login__frame'>
 					<h1 id='title'>REGISTER</h1>
 					<p id='red'>This does not work yet so dont use</p>
-					<form action='https://api.nerdee.io/action/register' method='POST' id='l__frm'>
-						<TextField id='username' label='Username' variant='filled' type='text' required />
+					<form action='http://localhost/users/register' method='POST' id='l__frm'>
+						<TextField
+							id='firstName'
+							label='First Name'
+							variant='filled'
+							type='text'
+							name='firstName'
+							required
+						/>
 						<br />
 						<br />
-						<TextField id='password' label='Password' variant='filled' type='password' required />
+						<TextField
+							id='lastName'
+							label='Last Name'
+							variant='filled'
+							type='text'
+							name='lastName'
+							required
+						/>
 						<br />
 						<br />
-						<Button variant='contained' size='large' color='primary' type='submit'>
+						<TextField
+							id='phoneNumber'
+							label='Phone Number (No Area Code)'
+							variant='filled'
+							type='number'
+							name='phone'
+							required
+						/>
+						<br />
+						<br />
+						<TextField id='email' label='Email' variant='filled' type='text' name='email' required />
+						<br />
+						<br />
+						<TextField
+							id='password'
+							label='Password'
+							variant='filled'
+							type='password'
+							name='password'
+							required
+						/>
+						<br />
+						<br />
+						<TextField
+							id='dob'
+							label='Date of Birth'
+							variant='filled'
+							type='date'
+							name='password'
+							required
+						/>
+						<br />
+						<br />
+						<TextField
+							id='password'
+							label='Password'
+							variant='filled'
+							type='password'
+							name='password'
+							required
+						/>
+						<br />
+						<br />
+						<TextField
+							id='password'
+							label='Password'
+							variant='filled'
+							type='password'
+							name='password'
+							required
+						/>
+						<br />
+						<br />
+						<TextField
+							id='password'
+							label='Password'
+							variant='filled'
+							type='password'
+							name='password'
+							required
+						/>
+						<br />
+						<br />
+						<TextField
+							id='password'
+							label='Password'
+							variant='filled'
+							type='password'
+							name='password'
+							required
+						/>
+						<br />
+						<br />
+						<TextField
+							id='password'
+							label='Password'
+							variant='filled'
+							type='password'
+							name='password'
+							required
+						/>
+						<br />
+						<br />
+						<TextField
+							id='password'
+							label='Password'
+							variant='filled'
+							type='password'
+							name='password'
+							required
+						/>
+						<br />
+						<br />
+						<Button variant='contained' size='large' color='primary' name='firstName' type='submit'>
 							Register
 						</Button>
 					</form>

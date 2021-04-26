@@ -1,15 +1,27 @@
-import React, { Component, useState, FC } from 'react';
+import React, { useState, FC, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
-import { Login } from '../index';
 
 interface Props {}
 
-export const Dashboard: FC<Props> = ({}) => {
-	const [ token, setToken ] = useState();
+export const Dashboard: FC<Props> = (props: any) => {
+	const [ name, setName ] = useState('');
 
-	if (!token) {
+	useEffect(() => {
+		(async () => {
+			// const res = await fetch('https://localhost/users/action/auth', {
+			// 	headers: { 'Content-Type': 'application/json' }
+			// });
+
+			// const cont = await res.json();
+
+			setName('Nothing');
+		})();
+	});
+
+	if (!name) {
+		console.log('No');
 		return <Redirect to='/login' />;
 	}
 
-	return <div>hello world</div>;
+	return <h1>Hello, {name} </h1>;
 };

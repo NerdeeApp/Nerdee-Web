@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Redirect, withRouter } from 'react-router-dom';
+import { Component } from 'react';
 import Cookies from 'universal-cookie';
 import '../../style/home.scss';
 
