@@ -32,7 +32,7 @@ export class Register extends Component {
 				<div id='login__frame'>
 					<h1 id='title'>REGISTER</h1>
 					<p id='red'>This does not work yet so dont use</p>
-					<form action='http://localhost/users/register' method='POST' id='l__frm'>
+					<form action='https://api.nerdee.io/users/register' method='POST' id='l__frm'>
 						<TextField
 							id='firstName'
 							label='First Name'
