@@ -14,7 +14,7 @@ export const Login: FC<props> = () => {
 	const submit = async (e: SyntheticEvent) => {
 		e.preventDefault();
 
-		await fetch('http://localhost/users/action/login', {
+		await fetch('https://api.nerdee.io/users/action/login', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
 			body: JSON.stringify({
