@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Button, TextField } from '@material-ui/core';
 import {} from '@material-ui/pickers';
 
+const domain = 'localhost';
+
 export class Register extends Component {
 	render() {
 		return (
@@ -32,7 +34,7 @@ export class Register extends Component {
 				<div id='login__frame'>
 					<h1 id='title'>REGISTER</h1>
 					<p id='red'>This does not work yet so dont use</p>
-					<form action='https://api.nerdee.io/users/register' method='POST' id='l__frm'>
+					<form action={`http://${domain}/users/register`} method='POST' id='l__frm'>
 						<TextField
 							id='firstName'
 							label='First Name'

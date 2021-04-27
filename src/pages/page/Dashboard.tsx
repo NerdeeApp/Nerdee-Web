@@ -19,7 +19,6 @@ export const Dashboard: FC<Props> = (props: any) => {
 	});
 
 	if (!name) {
-		console.log('No');
 		return <Redirect to='/login' />;
 	}
 

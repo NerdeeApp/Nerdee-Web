@@ -1,25 +1,10 @@
 import { Component } from 'react';
-import Cookies from 'universal-cookie';
 import '../../style/home.scss';
-
-const cookies = new Cookies();
-var d = new Date();
-var year = d.getFullYear();
-var month = d.getMonth();
-var day = d.getDate();
-var hour = d.getHours();
-var min = d.getMinutes();
-var ms = d.getMilliseconds();
 
 export class Home extends Component {
 	render() {
 		return (
 			<div className='App'>
-				{cookies.set('test', 'test', {
-					path: '/',
-					sameSite: 'strict',
-					expires: new Date(year, month + 1, day, hour, min, ms)
-				})}
 
 				<title>Nerdee | The Dating App for Tech Enthusiasts</title>
 				<header className='App-header' />
@@ -71,8 +56,6 @@ export class Home extends Component {
 						unrelated to finding someone that you, the user will love and appreciate.
 					</p>
 				</div>
-
-				{console.log(cookies.get('test'))}
 			</div>
 		);
 	}

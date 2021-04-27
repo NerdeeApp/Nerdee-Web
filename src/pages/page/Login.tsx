@@ -5,6 +5,7 @@ import '../../style/login.scss';
 import { Redirect } from 'react-router';
 
 interface props {}
+const domain = 'localhost';
 
 export const Login: FC<props> = () => {
 	const [ username, setUsername ] = useState('');
@@ -14,7 +15,7 @@ export const Login: FC<props> = () => {
 	const submit = async (e: SyntheticEvent) => {
 		e.preventDefault();
 
-		await fetch('https://api.nerdee.io/users/action/login', {
+		await fetch(`http://${domain}/users/action/login`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
 			body: JSON.stringify({
