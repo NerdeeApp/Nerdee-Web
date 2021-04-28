@@ -4,8 +4,12 @@ import Cookies from 'universal-cookie/es6';
 
 interface Props {}
 
+let cookies = new Cookies();
+
 export const Dashboard: FC<Props> = (props: any) => {
 	const [ name, setName ] = useState('');
+
+	if (!cookies.get('heavy_auth_token')) return <Redirect to='/home/' />;
 
 	useEffect(() => {
 		(async () => {
