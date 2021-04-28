@@ -3,6 +3,9 @@ import { Button, TextField } from '@material-ui/core';
 
 import '../../style/login.scss';
 import { Redirect } from 'react-router';
+import Cookies from 'universal-cookie/es6';
+
+let cookies = new Cookies();
 
 interface props {}
 const domain = 'api.nerdee.io';
@@ -31,6 +34,8 @@ export const Login: FC<props> = () => {
 	if (redirect) {
 		return <Redirect to='/home/' />;
 	}
+
+	if (cookies.get('heavy_auth_token')) return <Redirect to='/home/' />;
 
 	return (
 		<div className='App'>

@@ -1,20 +1,39 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState, SyntheticEvent } from 'react';
 import { Button, TextField } from '@material-ui/core';
 import {} from '@material-ui/pickers';
 import Cookies from 'universal-cookie/es6';
 import { Redirect } from 'react-router-dom';
 
+let cookies = new Cookies();
+
 const domain = 'api.nerdee.io';
 
 export const Register: FC = () => {
-	useEffect(() => {
-		(async () => {
-			const cookies = new Cookies();
-			if (cookies.get('heavy_auth_token')) return <Redirect to='/home' />;
+	if (cookies.get('heavy_auth_token')) return <Redirect to='/home/' />;
 
-			console.log('Hello');
-		})();
-	});
+	const [ username, setUsername ] = useState('');
+	const [ password, setPassword ] = useState('');
+	const [ redirect, setRedirect ] = useState(false);
+
+	const submit = async (e: SyntheticEvent) => {
+		e.preventDefault();
+
+		await fetch(`https://${domain}/users/action/register`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+			body: JSON.stringify({
+				username,
+				password
+			}),
+			credentials: 'include'
+		});
+
+		setRedirect(true);
+	};
+
+	if (redirect) {
+		return <Redirect to='/home/' />;
+	}
 
 	return (
 		<div className='App'>
@@ -44,7 +63,7 @@ export const Register: FC = () => {
 			<div id='login__frame'>
 				<h1 id='title'>REGISTER</h1>
 				<p id='red'>This does not work yet so dont use</p>
-				<form action={`https://${domain}/users/register`} method='POST' id='l__frm'>
+				<form id='l__frm'>
 					<TextField
 						id='firstName'
 						label='First Name'
@@ -144,7 +163,14 @@ export const Register: FC = () => {
 					/>
 					<br />
 					<br />
-					<Button variant='contained' size='large' color='primary' name='firstName' type='submit'>
+					<Button
+						onClick={submit}
+						variant='contained'
+						size='large'
+						color='primary'
+						name='firstName'
+						type='submit'
+					>
 						Register
 					</Button>
 				</form>
