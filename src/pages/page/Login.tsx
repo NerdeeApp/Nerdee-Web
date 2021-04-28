@@ -21,7 +21,8 @@ export const Login: FC<props> = () => {
 			body: JSON.stringify({
 				username,
 				password
-			})
+			}),
+			credentials: 'include'
 		});
 
 		setRedirect(true);
