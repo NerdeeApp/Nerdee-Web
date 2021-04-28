@@ -7,18 +7,14 @@ interface Props {}
 let cookies = new Cookies();
 
 export const Dashboard: FC<Props> = (props: any) => {
-	const [ name, setName ] = useState('');
-
-	useEffect(() => {
-		(async () => {
-			const cookies = new Cookies();
-			if (!cookies.get('heavy_auth_token')) return <Redirect to='/login' />;
-
-			setName('Nothing');
-		})();
-	});
-
 	if (!cookies.get('heavy_auth_token')) return <Redirect to='/home/' />;
 
-	return <h1>Hello, {name} </h1>;
+	return (
+		<div>
+			<header>
+				<title>Nerdee Dashboard</title>
+				<h1>Hello world</h1>
+			</header>
+		</div>
+	);
 };
