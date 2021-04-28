@@ -9,8 +9,6 @@ let cookies = new Cookies();
 const domain = 'api.nerdee.io';
 
 export const Register: FC = () => {
-	if (cookies.get('heavy_auth_token')) return <Redirect to='/home/' />;
-
 	const [ username, setUsername ] = useState('');
 	const [ password, setPassword ] = useState('');
 	const [ redirect, setRedirect ] = useState(false);
@@ -34,6 +32,8 @@ export const Register: FC = () => {
 	if (redirect) {
 		return <Redirect to='/home/' />;
 	}
+
+	if (cookies.get('heavy_auth_token')) return <Redirect to='/home/' />;
 
 	return (
 		<div className='App'>
