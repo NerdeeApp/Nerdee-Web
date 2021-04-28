@@ -7,7 +7,7 @@ interface Props {}
 let cookies = new Cookies();
 
 export const Dashboard: FC<Props> = (props: any) => {
-	if (!cookies.get('heavy_auth_token')) return <Redirect path='*' to='/home/' />;
+	if (!cookies.get('heavy_auth_token')) return <Redirect path='*' to='/login/' />;
 
 	return (
 		<div>
