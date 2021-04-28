@@ -9,8 +9,6 @@ let cookies = new Cookies();
 export const Dashboard: FC<Props> = (props: any) => {
 	const [ name, setName ] = useState('');
 
-	if (!cookies.get('heavy_auth_token')) return <Redirect to='/home/' />;
-
 	useEffect(() => {
 		(async () => {
 			const cookies = new Cookies();
@@ -19,6 +17,8 @@ export const Dashboard: FC<Props> = (props: any) => {
 			setName('Nothing');
 		})();
 	});
+
+	if (!cookies.get('heavy_auth_token')) return <Redirect to='/home/' />;
 
 	return <h1>Hello, {name} </h1>;
 };
