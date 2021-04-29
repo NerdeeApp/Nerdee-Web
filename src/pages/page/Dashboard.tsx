@@ -12,7 +12,7 @@ export const Dashboard: FC<Props> = (props: any) => {
 
 	setInterval(() => {
 		if (!cookies.get('heavy_auth_token')) window.location.href = '/login';
-	}, 5000);
+	}, 1000);
 
 	let logout = () => {
 		(async () => {
