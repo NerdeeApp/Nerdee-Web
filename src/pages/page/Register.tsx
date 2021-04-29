@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState, SyntheticEvent } from 'react';
+import React, { FC, useState, SyntheticEvent } from 'react';
 import { Button, TextField } from '@material-ui/core';
 import {} from '@material-ui/pickers';
 import Cookies from 'universal-cookie/es6';
@@ -9,7 +9,9 @@ let cookies = new Cookies();
 const domain = 'api.nerdee.io';
 
 export const Register: FC = () => {
+	//eslint-disable-next-line
 	const [ username, setUsername ] = useState('');
+	//eslint-disable-next-line
 	const [ password, setPassword ] = useState('');
 	const [ redirect, setRedirect ] = useState(false);
 
