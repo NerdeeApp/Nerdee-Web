@@ -5,21 +5,25 @@ import Cookies from 'universal-cookie/es6';
 interface Props {}
 
 let cookies = new Cookies();
-let domain = "api.nerdee.io"
+let domain = 'api.nerdee.io';
 
 export const Dashboard: FC<Props> = (props: any) => {
 	if (!cookies.get('heavy_auth_token')) return <Redirect path='*' to='/login/' />;
 
+	setInterval(() => {
+		if (!cookies.get('heavy_auth_token')) window.location.href = '/login';
+	}, 5000);
+
 	let logout = () => {
 		(async () => {
 			await fetch(`https://${domain}/users/action/logout`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-			body: JSON.stringify({
-				heavy_auth_token: await cookies.get("heavy_auth_token");
-			}),
-			credentials: 'include'
-		});
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+				body: JSON.stringify({
+					heavy_auth_token: await cookies.get('heavy_auth_token')
+				}),
+				credentials: 'include'
+			});
 		})();
 	};
 
