@@ -10,7 +10,7 @@ let cookies = new Cookies();
 interface props {}
 const domain = 'api.nerdee.io';
 
-export const Login: FC<props> = () => {
+const Login: FC<props> = () => {
 	const [ username, setUsername ] = useState('');
 	const [ password, setPassword ] = useState('');
 	const [ redirect, setRedirect ] = useState(false);
@@ -100,3 +100,5 @@ export const Login: FC<props> = () => {
 		</div>
 	);
 };
+
+export default Login;

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import '../../style/home.scss';
 
-export class Home extends Component {
+export default class Home extends Component {
 	render() {
 		return (
 			<div className='App'>

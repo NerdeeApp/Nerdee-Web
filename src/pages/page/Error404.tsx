@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../style/error.scss';
 
-export class Error404 extends Component {
+export default class Error404 extends Component {
 	render() {
 		return (
 			<div className='App'>

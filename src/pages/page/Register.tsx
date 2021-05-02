@@ -8,7 +8,7 @@ let cookies = new Cookies();
 
 const domain = 'api.nerdee.io';
 
-export const Register: FC = () => {
+const Register: FC = () => {
 	//eslint-disable-next-line
 	const [ username, setUsername ] = useState('');
 	//eslint-disable-next-line
@@ -182,3 +182,5 @@ export const Register: FC = () => {
 		</div>
 	);
 };
+
+export default Register;

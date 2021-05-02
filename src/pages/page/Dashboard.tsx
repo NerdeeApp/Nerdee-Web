@@ -7,7 +7,7 @@ interface Props {}
 let cookies = new Cookies();
 let domain = 'api.nerdee.io';
 
-export const Dashboard: FC<Props> = (props: any) => {
+const Dashboard: FC<Props> = (props: any) => {
 	if (!cookies.get('heavy_auth_token')) return <Redirect path='*' to='/login/' />;
 
 	setInterval(() => {
@@ -40,3 +40,5 @@ export const Dashboard: FC<Props> = (props: any) => {
 		</div>
 	);
 };
+
+export default Dashboard;
