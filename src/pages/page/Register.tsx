@@ -3,6 +3,7 @@ import { Button, TextField } from '@material-ui/core';
 import {} from '@material-ui/pickers';
 import Cookies from 'universal-cookie/es6';
 import { Redirect } from 'react-router-dom';
+import '../../style/login.scss';
 
 let cookies = new Cookies();
 
