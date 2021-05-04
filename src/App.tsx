@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import './style/global.scss';
-import { Navbar, Loading } from './components';
+import { Navbar, Loading, Footer } from './components';
 
 const Home = React.lazy(() => import('./pages/page/Home'));
 const Login = React.lazy(() => import('./pages/page/Login'));
@@ -16,6 +16,7 @@ const App = () => {
 		<Router>
 			<Suspense fallback={Loading}>
 				<Navbar />
+				<Footer />
 				<Switch>
 					<Route exact path='/' component={Home} />
 					<Route exact path='/login' component={Login} />

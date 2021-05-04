@@ -150,6 +150,63 @@ nav .user__func a {
 	}
 }
 
+footer {
+	$footerheight: 40vh;
+
+	height: $footerheight;
+	width: 100vw;
+
+	background-color: $background;
+
+	position: absolute;
+	top: 200%;
+	left: 0;
+	right: 0;
+
+	z-index: 1000;
+
+	#left {
+		$paddl: 5%;
+		padding-left: $paddl;
+		float: left;
+
+		background-color: transparent;
+
+		height: $footerheight;
+		width: calc(50% - $paddl);
+
+		display: flex;
+		justify-content: space-evenly;
+		align-items: left;
+
+		flex-direction: column;
+
+		a {
+			color: #ffffff;
+		}
+
+		color: #ffffff;
+	}
+
+	#right {
+		float: right;
+
+		background-color: transparent;
+
+		height: $footerheight;
+		width: 50%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		color: white;
+
+		font-size: 1.5em;
+		font-weight: bolder;
+	}
+}
+
 /*
 ##############################################
 ##                 MAIN BODY                ##
