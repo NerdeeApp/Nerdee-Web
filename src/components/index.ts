@@ -1,2 +1,2 @@
-export * from './popup';
+export * from './Loading';
 export * from './navbar';

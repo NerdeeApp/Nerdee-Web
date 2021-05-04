@@ -35,7 +35,7 @@ export default class Home extends Component {
 				<div id='about'>
 					<h1 id='title'>ABOUT US</h1>
 					<p id='info'>
-						<span id="title__bar"><h2><b>FAQ</b></h2></span>
+						<span id="title__bar"><b>FAQ</b></span><br /><br />
 						<b>Our Goals.</b>
 						<br />
 						Here at Nerdee, we aim for our clients to enjoy life with someone who has similar thoughts,

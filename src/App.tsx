@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import './style/global.scss';
-import { Navbar } from './components';
+import { Navbar, Loading } from './components';
 
 const Home = React.lazy(() => import('./pages/page/Home'));
 const Login = React.lazy(() => import('./pages/page/Login'));
@@ -14,14 +14,17 @@ import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-ro
 const App = () => {
 	return (
 		<Router>
-			<Suspense fallback='Loading...'>
+			<Suspense fallback={Loading}>
 				<Navbar />
 				<Switch>
 					<Route exact path='/' component={Home} />
 					<Route exact path='/login' component={Login} />
 					<Route exact path='/register' component={Register} />
 
+					<Route exact path='/info/credits' component={Home} />
+
 					<Route exact path='/home' component={Dashboard} />
+					<Route exact path='/loading' component={Loading} />
 
 					<Route exact path='/profile' component={Dashboard} />
 					<Route exact path='/profile/:id' component={Dashboard} />

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&family=Open+Sans:wght@400;700&display=swap');
+
 #login__frame {
     height: 100%;
     width: 100%;
@@ -77,6 +79,23 @@
 	left: 0;
 }
 
+#need__acc {
+    color: grey;
+    float: right;
+
+    right: calc(25px / 2);
+    top: -25px;
+    position: relative;
+
+    a {
+        color: #7703fc
+    }
+}
+
+.Field {
+    width: 100%;
+}
+
 @media screen and (max-width: 1280px) {
     #logo_word {
         display: none;
@@ -84,29 +103,54 @@
 }
 
 @media screen and (max-width: 768px) {
+    .Field {
+        width: calc(100% - 50px);
+    }
+
     #login__frame {
-        min-height: calc(100vh - 2em);
+        min-height: 70vh;
         min-width: calc(100vw - 2em);
 
-        max-height: calc(100vh - 2em);
+        max-height: calc(100vh - 8em);
         max-width: calc(100vw - 2em);
+
+        height: 100%;
 
         margin-left: 1em;
         margin-right: 1em;
         
         padding: 0;
+
+        top: calc(6vh + 2em);
+        left: 50%;
+        position: absolute;
+
+        transform: translate(calc(-50% - 15px), 0);
     }
 
     #l__frm {
         align-items: center;
     }
     #login__frame #title {
-        font-size: 3em;
+        font-size: 4em;
 
         text-align: center;
     }
 
     #red {
         text-align: center;
+    }
+
+    #need__acc {
+        color: grey;
+        float: right;
+
+        right: 25px;
+        top: -25px;
+        position: relative;
+
+        a {
+            color: #7703fc
+        }
     }
 }
