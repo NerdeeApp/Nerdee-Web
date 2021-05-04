@@ -152,7 +152,6 @@ nav .user__func a {
 
 footer {
 	$footerheight: 40vh;
-	$paddl: 5%;
 
 	height: $footerheight;
 	width: 100vw;
@@ -167,13 +166,13 @@ footer {
 	z-index: 1000;
 
 	#left {
-		padding-left: $paddl;
+		padding-left: 5%;
 		float: left;
 
 		background-color: transparent;
 
 		height: $footerheight;
-		width: calc(50% - $paddl);
+		width: calc(50% - 5%);
 
 		display: flex;
 		justify-content: space-evenly;
