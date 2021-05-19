@@ -30,6 +30,9 @@ const App = () => {
 					<Route exact path='/profile' component={Dashboard} />
 					<Route exact path='/profile/:id' component={Dashboard} />
 
+					<Redirect exact path='/ref' to='/' />
+					<Route exact path='/ref/:code' component={Register} />
+
 					{/* ! Errors */}
 					<Route exact path='/404' component={Error404} />
 					<Redirect to='/404' />
