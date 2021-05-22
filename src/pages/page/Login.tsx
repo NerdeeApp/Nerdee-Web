@@ -64,13 +64,12 @@ const Login: FC<props> = () => {
 
 			<div id='login__frame'>
 				<h1 id='title'>LOGIN</h1>
-				<p id='red'>This is a devloper only page currently. Please come back soon</p>
 				<form onSubmit={submit} id='l__frm'>
 					<TextField
 						name='username'
 						id='username'
 						label='Username or Email'
-						variant='filled'
+						variant='outlined'
 						type='text'
 						autoComplete='username'
 						onChange={(e) => setUsername(e.target.value)}
@@ -83,7 +82,7 @@ const Login: FC<props> = () => {
 						name='password'
 						id='password'
 						label='Password'
-						variant='filled'
+						variant='outlined'
 						type='password'
 						autoComplete='current-password'
 						onChange={(e) => setPassword(e.target.value)}

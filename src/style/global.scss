@@ -43,6 +43,10 @@ html {
 	overflow-x: hidden;
 }
 
+.hidden {
+	display: none;
+}
+
 /*
 ##############################################
 ##                NAVIGATION                ##
@@ -239,6 +243,57 @@ footer {
 	z-index: 0;
 
 	overflow-y: scroll;
+}
+
+.CookieBanner {
+	width: 100vw;
+	height: 10vh;
+
+	background-color: #181818;
+
+	position: fixed;
+
+	bottom: 0;
+
+	z-index: 999999;
+
+	color: white;
+
+	font-family: 'Open Sans', sans-serif;
+
+	button {
+		background: #4200B7;
+
+		border: none;
+
+		color: white;
+
+		font-family: 'Montserrat', sans-serif;
+
+		font-weight: 700;
+
+		height: 3em;
+		width: 7.5em;
+
+		transform: translate(-50%, -50%);
+
+		position: absolute;
+
+		top: 50%;
+		right: 1%;
+
+		&:hover {
+			background-color: #27006e;
+		}
+	}
+
+	p {
+		height: 0vh;
+		top: 25%;
+		left: 10%;
+
+		position: absolute;
+	}
 }
 
 ::-webkit-scrollbar {

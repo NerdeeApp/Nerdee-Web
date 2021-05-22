@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import './style/global.scss';
-import { Navbar, Loading, Footer } from './components';
+import { Navbar, Loading, AcceptCookies } from './components';
+import Cookies from 'universal-cookie/es6';
 
 const Home = React.lazy(() => import('./pages/page/Home'));
 const Login = React.lazy(() => import('./pages/page/Login'));
@@ -11,12 +12,16 @@ const Error404 = React.lazy(() => import('./pages/page/Error404'));
 // eslint-disable-next-line
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
 
+let Cookie = new Cookies();
+let Accepted = Cookie.get('AcceptedCookies');
+
 const App = () => {
 	return (
 		<Router>
 			<Suspense fallback={Loading}>
 				<Navbar />
-				<Footer />
+				{!Accepted ? <AcceptCookies /> : <div>hello World</div>}
+
 				<Switch>
 					<Route exact path='/' component={Home} />
 					<Route exact path='/login' component={Login} />

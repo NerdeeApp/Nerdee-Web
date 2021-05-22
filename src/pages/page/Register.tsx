@@ -1,5 +1,6 @@
 import React, { FC, useState, SyntheticEvent } from 'react';
 import { Button, TextField } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 import {} from '@material-ui/pickers';
 import Cookies from 'universal-cookie/es6';
 import { Redirect } from 'react-router-dom';
@@ -15,6 +16,7 @@ const Register: FC = () => {
 	//eslint-disable-next-line
 	const [ password, setPassword ] = useState('');
 	const [ redirect, setRedirect ] = useState(false);
+	const [ existsType, setExistsType ] = useState('');
 
 	const submit = async (e: SyntheticEvent) => {
 		e.preventDefault();
@@ -65,12 +67,23 @@ const Register: FC = () => {
 
 			<div id='login__frame'>
 				<h1 id='title'>REGISTER</h1>
-				<p id='red'>This does not work yet so dont use</p>
+				<Alert severity='error'>An account with this {existsType} already exists!</Alert>
 				<form id='l__frm'>
+					<TextField
+						id='email'
+						label='Email'
+						variant='outlined'
+						type='text'
+						name='firstName'
+						required
+						className='Field'
+					/>
+					<br />
+					<br />
 					<TextField
 						id='firstName'
 						label='First Name'
-						variant='filled'
+						variant='outlined'
 						type='text'
 						name='firstName'
 						required
@@ -81,7 +94,7 @@ const Register: FC = () => {
 					<TextField
 						id='lastName'
 						label='Last Name'
-						variant='filled'
+						variant='outlined'
 						type='text'
 						name='lastName'
 						required
@@ -90,7 +103,7 @@ const Register: FC = () => {
 					<br />
 					<br />
 					<Button
-						onClick={submit}
+						onClick={onNext}
 						variant='contained'
 						size='large'
 						color='primary'
@@ -108,6 +121,12 @@ const Register: FC = () => {
 			</div>
 		</div>
 	);
+};
+
+let onNext = () => {
+	let email = document.getElementById('email');
+	let fName = document.getElementById('firstName');
+	let lName = document.getElementById('lastName');
 };
 
 export default Register;
