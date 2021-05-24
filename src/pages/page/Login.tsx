@@ -30,8 +30,8 @@ const Login: FC<props> = () => {
 
 		console.log(res);
 
-		if (res.body) {
-			console.log(res.body);
+		if (res) {
+			console.log(res);
 		}
 
 		setRedirect(true);
