@@ -8,7 +8,7 @@ import Cookies from 'universal-cookie/es6';
 let cookies = new Cookies();
 
 interface props {}
-const domain = 'api.nerdee.io';
+const domain = 'localhost';
 
 const Login: FC<props> = () => {
 	const [ username, setUsername ] = useState('');
@@ -18,15 +18,22 @@ const Login: FC<props> = () => {
 	const submit = async (e: SyntheticEvent) => {
 		e.preventDefault();
 
-		await fetch(`https://${domain}/users/action/login`, {
+		let res = await fetch(`http://${domain}/users/action/login`, {
+			mode: 'no-cors',
 			method: 'POST',
-			headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+			headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'localhost:3000' },
 			body: JSON.stringify({
 				username,
 				password,
 			}),
 			credentials: 'include',
 		});
+
+		console.log(res);
+
+		if (res.body) {
+			console.log(res.body);
+		}
 
 		setRedirect(true);
 	};
