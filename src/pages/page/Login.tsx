@@ -29,7 +29,7 @@ const Login: FC<props> = () => {
 			credentials: 'include',
 		}) /*.then((res) => res.json().then((data) => console.log(data)));*/
 			.then((json) => {
-				console.log(`response: ${JSON.stringify(json)}`);
+				console.log(json);
 			})
 			.catch((err) => console.log(`API CALL ERROR: ${err.message}`));
 
