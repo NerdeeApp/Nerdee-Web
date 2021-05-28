@@ -116,7 +116,7 @@ const Register: FC = () => {
 				</form>
 				<br />
 				<p id='need__acc'>
-					Got an Account? <a href='/Login'>Login</a>
+					Got an Account? <a href='/login'>Login</a>
 				</p>
 			</div>
 		</div>

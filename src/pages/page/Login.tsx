@@ -36,7 +36,12 @@ const Login: FC<props> = () => {
 					setRedirect(true);
 				});
 			})
-			.catch((err) => console.log(`API CALL ERROR: ${err.message}`));
+			.catch((err) =>
+				console.log(
+					`%cError 500. Internal Server Error:- ${JSON.stringify(err)}`,
+					'color: red; font-weight: bold;'
+				)
+			);
 	};
 
 	if (redirect) {
@@ -116,7 +121,7 @@ const Login: FC<props> = () => {
 				</form>
 				<br />
 				<p id='need__acc'>
-					Need an Account? <a href='/Register'>Register</a>
+					Need an Account? <a href='/register'>Register</a>
 				</p>
 			</div>
 		</div>

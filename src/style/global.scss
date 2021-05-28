@@ -10,7 +10,7 @@
 ##                  IMPORTS                 ##
 ##############################################
 */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700&family=Open+Sans:wght@400;700&display=swap');
 
 /*
 ##############################################
@@ -52,161 +52,105 @@ html {
 ##                NAVIGATION                ##
 ##############################################
 */
+
 nav {
-	margin: 0;
-	padding: 0;
+	$padding: 10px;
+	$height: 6vh;
+
+	width: 100vw;
+	height: $height;
+
+	box-sizing: border-box;
+
+	padding: $padding;
+
+	background-color: #181818;
 
 	position: fixed;
 	top: 0;
 	left: 0;
 
-	width: 100vw;
-	height: $navheight;
-
-	background-color: #4200B7aa;
-
 	z-index: 999999;
 
-	backdrop-filter: blur(10px);
-
-	font-family: 'Open Sans', sans-serif;
-}
-
-nav a {
-	color: white;
-}
-
-nav img {
-	height: calc( 6vh - 20px );
-	transform: translate(0, -50%);
-
-	position: absolute;
-	left: 30px;
-	top: 50%;
-}
-
-nav .nav__list {
-	list-style: none;
-	width: 30vw;
-
-	height: $navheight;
-
-	background-color: transparent;
-
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-
-	position: absolute;
-	top: 0;
-	right: 20vw;
-
-	padding: 0;
-	margin: 0;
-
-	font-size: 1.25em;
-
-	text-transform: uppercase;
-}
-
-nav .nav__list li a {
-	text-decoration: none;
-}
-
-nav .user__func {
-	width: 20vw;
-	height: $navheight;
-
-	background-color: transparent;
-
-	position: absolute;
-	top: 0;
-	right: 0;
-
-	margin: 0;
-	padding: 0;
-
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-
-	font-size: 1.25em;
-}
-
-nav .user__func a {
-	text-decoration: none;
-
-	text-transform: uppercase;
-
-	padding: 0.25em 0.5em;
-	text-align: center;
-
-	border-radius: 100em;
-
-	font-size: 0.75em;
-
-	font-weight: 100;
-}
-
-@media screen and (max-width: 768px) {
-	nav {
-		height: 7vh;
+	& img {
+		height: calc(6vh - 20px);
+		
+		transform: translateY(-50%);
+		position: relative;
+		left: 10px;
+		top: 50%;
 	}
-}
 
-footer {
-	$footerheight: 40vh;
+	& .right {
+		width: 40%;
+		height: 100%;
 
-	height: $footerheight;
-	width: 100vw;
+		max-width: 50%;
+		min-height: $height;
+		max-height: $height;
 
-	background-color: $background;
-
-	position: absolute;
-	top: 200%;
-	left: 0;
-	right: 0;
-
-	z-index: 1000;
-
-	#left {
-		padding-left: 5%;
-		float: left;
+		position: absolute;
+		top: 0;
+		right: 0;
 
 		background-color: transparent;
 
-		height: $footerheight;
-		width: calc(50% - 5%);
+		box-sizing: border-box;
 
-		display: flex;
-		justify-content: space-evenly;
-		align-items: left;
+		padding-right: 80px;
 
-		flex-direction: column;
+		& .nav__notbutton {
+			position: relative;
+			float: right;
 
-		a {
-			color: #ffffff;
+			width: 6vw;
+			height: 6vh;
+			background-color: #181818;
+
+			color: #fff;
+
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 500;
+			font-size: 1em;
+
+			text-align: center;
+
+			cursor: pointer;
+
+			border: 0;
+
+			&:hover,
+			&:focus {
+				height: 6vh;
+				border-radius: 0;
+
+				& .hover_border__bottom {
+					height: 4px;
+
+					background-color: #30009e;
+
+					position: absolute;
+					left: 0;
+					top: calc(6vh - 4px);
+
+					animation: forwards slide 250ms;
+				}
+
+				background-color: #202020;
+			}
+
+			outline: none;
 		}
+	}
+}
 
-		color: #ffffff;
+@keyframes slide {
+	from {
+		width: 0;
 	}
 
-	#right {
-		float: right;
-
-		background-color: transparent;
-
-		height: $footerheight;
-		width: 50%;
-
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		color: white;
-
-		font-size: 1.5em;
-		font-weight: bolder;
+	to {
+		width: 6vw;
 	}
 }
 

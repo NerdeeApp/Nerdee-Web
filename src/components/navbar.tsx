@@ -1,34 +1,35 @@
-import React, { Component } from 'react';
+import React, { FC, useCallback } from 'react';
+import { useHistory } from 'react-router-dom';
 
-export class Navbar extends Component {
-	render() {
-		return (
-			<nav>
-				<a href='/' id='nav__logo'>
-					<img src='/images/SVG/logo.svg' alt='' />
-				</a>
+export const Navbar: FC<any> = () => {
+	const history = useHistory();
 
-				{/* <ul className='nav__list'>
-					<li className='nav__list_link'>
-						<a href='/'>Home</a>
-					</li>
-					<li className='nav__list_link'>
-						<a href='/'>Contact Us</a>
-					</li>
-					<li className='nav__list_link'>
-						<a href='/'>About Us</a>
-					</li>
-				</ul>
+	const loginSend = () => {
+		return (window.location.href = '/login');
+	};
 
-				<div className='user__func'>
-					<a href='/login' id='login'>
-						login
-					</a>
-					<a href='/login' id='login'>
-						register
-					</a>
-				</div> */}
-			</nav>
-		);
-	}
-}
+	const registerSend = () => {
+		return (window.location.href = '/register');
+	};
+
+	return (
+		<nav>
+			<a href='/' id='nav__logo'>
+				<img src='/images/SVG/logo.svg' alt='' />
+			</a>
+
+			<div className='right'>
+				<div className='default'>
+					<button className='nav__notbutton' id='nav__register' onClick={registerSend} tabIndex={0}>
+						Register
+						<div className='hover_border__bottom' />
+					</button>
+					<button className='nav__notbutton' id='nav__login' onClick={loginSend} tabIndex={0}>
+						Login
+						<div className='hover_border__bottom' />
+					</button>
+				</div>
+			</div>
+		</nav>
+	);
+};
