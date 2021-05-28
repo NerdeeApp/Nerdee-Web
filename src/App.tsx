@@ -20,7 +20,7 @@ const App = () => {
 		<Router>
 			<Suspense fallback={Loading}>
 				<Navbar />
-				{!Accepted ? <AcceptCookies /> : <div>hello World</div>}
+				{!Accepted ? <AcceptCookies /> : null}
 
 				<Switch>
 					<Route exact path='/' component={Home} />
