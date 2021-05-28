@@ -15,6 +15,7 @@ const Login: FC<props> = () => {
 	const [ username, setUsername ] = useState('');
 	const [ password, setPassword ] = useState('');
 	const [ redirect, setRedirect ] = useState(false);
+	const [ valid, setValid ] = useState(true);
 
 	const submit = async (e: SyntheticEvent) => {
 		e.preventDefault();
@@ -29,7 +30,9 @@ const Login: FC<props> = () => {
 			credentials: 'include',
 		}) /*.then((res) => res.json().then((data) => console.log(data)));*/
 			.then((res) => {
-				res.json().then((data) => console.log(data));
+				res.json().then((data) => {
+					if (!data.Success) setValid(false);
+				});
 			})
 			.catch((err) => console.log(`API CALL ERROR: ${err.message}`));
 
@@ -69,7 +72,7 @@ const Login: FC<props> = () => {
 
 			<div id='login__frame'>
 				<h1 id='title'>LOGIN</h1>
-				<Alert severity='error'>User Not Found</Alert>
+				{valid ? <Alert severity='error'>Failed To Find User</Alert> : null}
 				<br />
 				<br />
 				<form onSubmit={submit} id='l__frm'>
