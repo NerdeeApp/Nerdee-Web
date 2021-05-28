@@ -9,7 +9,7 @@ import Cookies from 'universal-cookie/es6';
 let cookies = new Cookies();
 
 interface props {}
-const domain = 'localhost';
+const domain = 'api.nerdee.io';
 
 const Login: FC<props> = () => {
 	const [ username, setUsername ] = useState('');
@@ -19,7 +19,7 @@ const Login: FC<props> = () => {
 	const submit = async (e: SyntheticEvent) => {
 		e.preventDefault();
 
-		await fetch(`http://${domain}/users/action/login`, {
+		await fetch(`https://${domain}/users/action/login`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
 			body: JSON.stringify({
