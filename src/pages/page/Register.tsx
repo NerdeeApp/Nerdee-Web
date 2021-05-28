@@ -1,4 +1,4 @@
-import React, { FC, useState, SyntheticEvent } from 'react';
+import { FC, useState, SyntheticEvent } from 'react';
 import { Button, TextField } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 import {} from '@material-ui/pickers';
@@ -127,6 +127,9 @@ let onNext = () => {
 	let email = document.getElementById('email');
 	let fName = document.getElementById('firstName');
 	let lName = document.getElementById('lastName');
+
+	let _s;
+	_s = `${email}, ${fName}, ${lName}`;
 };
 
 export default Register;

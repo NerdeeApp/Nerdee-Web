@@ -1,5 +1,6 @@
 import { FC, SyntheticEvent, useState } from 'react';
 import { Button, TextField } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 
 import '../../style/login.scss';
 import { Redirect } from 'react-router';
@@ -8,7 +9,7 @@ import Cookies from 'universal-cookie/es6';
 let cookies = new Cookies();
 
 interface props {}
-const domain = 'api.nerdee.io';
+const domain = 'localhost';
 
 const Login: FC<props> = () => {
 	const [ username, setUsername ] = useState('');
@@ -18,7 +19,7 @@ const Login: FC<props> = () => {
 	const submit = async (e: SyntheticEvent) => {
 		e.preventDefault();
 
-		let res = await fetch(`https://${domain}/users/action/login`, {
+		await fetch(`http://${domain}/users/action/login`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
 			body: JSON.stringify({
@@ -26,13 +27,11 @@ const Login: FC<props> = () => {
 				password,
 			}),
 			credentials: 'include',
-		});
-
-		console.log(res);
-
-		if (res) {
-			console.log(res);
-		}
+		}) /*.then((res) => res.json().then((data) => console.log(data)));*/
+			.then((json) => {
+				console.log(`response: ${JSON.stringify(json)}`);
+			})
+			.catch((err) => console.log(`API CALL ERROR: ${err.message}`));
 
 		setRedirect(true);
 	};
@@ -70,6 +69,9 @@ const Login: FC<props> = () => {
 
 			<div id='login__frame'>
 				<h1 id='title'>LOGIN</h1>
+				<Alert severity='error'>User Not Found</Alert>
+				<br />
+				<br />
 				<form onSubmit={submit} id='l__frm'>
 					<TextField
 						name='username'

@@ -1,9 +1,7 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import Cookies from 'universal-cookie/es6';
 
 export const AcceptCookies: FC<any> = () => {
-	let [ visible, setVisible ] = useState(true);
-
 	let HideCookie = () => {
 		let Cookie = new Cookies();
 
