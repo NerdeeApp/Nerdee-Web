@@ -72,7 +72,7 @@ const Login: FC<props> = () => {
 
 			<div id='login__frame'>
 				<h1 id='title'>LOGIN</h1>
-				{valid ? <Alert severity='error'>Failed To Find User</Alert> : null}
+				{!valid ? <Alert severity='error'>Failed To Find User</Alert> : null}
 				<br />
 				<br />
 				<form onSubmit={submit} id='l__frm'>
