@@ -31,12 +31,12 @@ const Login: FC<props> = () => {
 		}) /*.then((res) => res.json().then((data) => console.log(data)));*/
 			.then((res) => {
 				res.json().then((data) => {
-					if (!data.Success) setValid(false);
+					if (!data.Success) return setValid(false);
+
+					setRedirect(true);
 				});
 			})
 			.catch((err) => console.log(`API CALL ERROR: ${err.message}`));
-
-		//if (valid) setRedirect(true);
 	};
 
 	if (redirect) {
