@@ -11,34 +11,22 @@ let cookies = new Cookies();
 const domain = 'api.nerdee.io';
 
 const Register: FC = () => {
-	//eslint-disable-next-line
-	const [ username, setUsername ] = useState('');
-	//eslint-disable-next-line
-	const [ password, setPassword ] = useState('');
-	const [ redirect, setRedirect ] = useState(false);
-	const [ existsType, setExistsType ] = useState('');
+	const [ step, setStep ] = useState(1);
+	const [ inputs, setInputs ] = useState({});
 
-	const submit = async (e: SyntheticEvent) => {
-		e.preventDefault();
-
-		await fetch(`https://${domain}/users/action/register`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-			body: JSON.stringify({
-				username,
-				password,
-			}),
-			credentials: 'include',
-		});
-
-		setRedirect(true);
+	const onNext = () => {
+		return setStep(step + 1);
 	};
 
-	if (redirect) {
-		return <Redirect to='/home/' />;
-	}
+	const onReturn = () => {
+		return setStep(step + 1);
+	};
 
-	if (cookies.get('heavy_auth_token')) return <Redirect to='/home/' />;
+	const handleChange = () => {
+		setInputs({});
+
+		return 0;
+	};
 
 	return (
 		<div className='App'>
@@ -67,69 +55,147 @@ const Register: FC = () => {
 
 			<div id='login__frame'>
 				<h1 id='title'>REGISTER</h1>
-				<Alert severity='error'>An account with this {existsType} already exists!</Alert>
-				<form id='l__frm'>
-					<TextField
-						id='email'
-						label='Email'
-						variant='outlined'
-						type='text'
-						name='firstName'
-						required
-						className='Field'
-					/>
-					<br />
-					<br />
-					<TextField
-						id='firstName'
-						label='First Name'
-						variant='outlined'
-						type='text'
-						name='firstName'
-						required
-						className='Field'
-					/>
-					<br />
-					<br />
-					<TextField
-						id='lastName'
-						label='Last Name'
-						variant='outlined'
-						type='text'
-						name='lastName'
-						required
-						className='Field'
-					/>
-					<br />
-					<br />
-					<Button
-						onClick={onNext}
-						variant='contained'
-						size='large'
-						color='primary'
-						name='firstName'
-						type='submit'
-						className='Field'
-					>
-						Next
-					</Button>
-				</form>
-				<br />
-				<p id='need__acc'>
-					Got an Account? <a href='/login'>Login</a>
-				</p>
+				{(() => {
+					switch (step) {
+						default:
+							return (
+								<div>
+									<form id='l__frm'>
+										<TextField
+											id='email'
+											label='Email'
+											variant='outlined'
+											type='text'
+											name='email'
+											required
+											className='Field'
+										/>
+										<br />
+										<Button
+											onClick={onNext}
+											variant='contained'
+											size='large'
+											color='primary'
+											name='firstName'
+											className='Field'
+										>
+											Next
+										</Button>
+									</form>
+									<br />
+									<p id='need__acc'>
+										Got an Account? <a href='/login'>Login</a>
+									</p>
+								</div>
+							);
+						case 1:
+							return (
+								<div>
+									<form id='l__frm'>
+										<TextField
+											id='email'
+											label='Email'
+											variant='outlined'
+											type='text'
+											name='email'
+											required
+											className='Field'
+										/>
+										<br />
+										<Button
+											onClick={onNext}
+											variant='contained'
+											size='large'
+											color='primary'
+											name='firstName'
+											className='Field'
+										>
+											Next
+										</Button>
+									</form>
+									<br />
+									<p id='need__acc'>
+										Got an Account? <a href='/login'>Login</a>
+									</p>
+								</div>
+							);
+						case 2:
+							return (
+								<div>
+									<form id='l__frm'>
+										<TextField
+											id='fName'
+											label='First Name'
+											variant='outlined'
+											type='text'
+											name='firstName'
+											required
+											className='Field'
+										/>
+										<br />
+										<TextField
+											id='lName'
+											label='Last Name'
+											variant='outlined'
+											type='text'
+											name='lastName'
+											required
+											className='Field'
+										/>
+										<br />
+										<Button
+											onClick={onNext}
+											variant='contained'
+											size='large'
+											color='primary'
+											name='firstName'
+											className='Field'
+										>
+											Next
+										</Button>
+									</form>
+									<br />
+									<p id='need__acc'>
+										Got an Account? <a href='/login'>Login</a>
+									</p>
+								</div>
+							);
+						case 3:
+							return (
+								<div>
+									<form id='l__frm'>
+										<TextField
+											id='email'
+											label='Email'
+											variant='outlined'
+											type='text'
+											name='firstName'
+											required
+											className='Field'
+										/>
+										<br />
+										<Button
+											onClick={onNext}
+											variant='contained'
+											size='large'
+											color='primary'
+											name='firstName'
+											className='Field'
+										>
+											Next
+										</Button>
+									</form>
+									<br />
+									<p id='need__acc'>
+										Got an Account? <a href='/login'>Login</a>
+									</p>
+								</div>
+							);
+					}
+				})()}
 			</div>
 		</div>
 	);
-};
-
-let onNext = () => {
-	let email = document.getElementById('email');
-	let fName = document.getElementById('firstName');
-	let lName = document.getElementById('lastName');
-
-	let _s;
-	_s = `${email}, ${fName}, ${lName}`;
 };
 
 export default Register;
