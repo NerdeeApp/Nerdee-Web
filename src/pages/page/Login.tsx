@@ -36,7 +36,7 @@ const Login: FC<props> = () => {
 			})
 			.catch((err) => console.log(`API CALL ERROR: ${err.message}`));
 
-		if (valid) setRedirect(true);
+		//if (valid) setRedirect(true);
 	};
 
 	if (redirect) {
