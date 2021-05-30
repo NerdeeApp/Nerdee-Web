@@ -22,7 +22,7 @@ const Login: FC<props> = () => {
 
 		await fetch(`https://${domain}/users/action/login`, {
 			method: 'POST',
-			headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+			headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'https://nerdee.io' },
 			body: JSON.stringify({
 				username,
 				password,

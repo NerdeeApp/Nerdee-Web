@@ -12,7 +12,16 @@ const domain = 'api.nerdee.io';
 
 const Register: FC = () => {
 	const [ step, setStep ] = useState(1);
-	const [ inputs, setInputs ] = useState({});
+	let [ inputs, setInputs ] = useState({
+		email: '',
+		username: '',
+		fName: '',
+		lName: '',
+		password: '',
+		dob: '',
+		gender: '',
+		sexuality: '',
+	});
 
 	const onNext = () => {
 		return setStep(step + 1);
@@ -22,10 +31,8 @@ const Register: FC = () => {
 		return setStep(step + 1);
 	};
 
-	const handleChange = () => {
-		setInputs({});
-
-		return 0;
+	let handleChange = (property: any) => (e: any) => {
+		console.log(inputs);
 	};
 
 	return (
@@ -57,37 +64,37 @@ const Register: FC = () => {
 				<h1 id='title'>REGISTER</h1>
 				{(() => {
 					switch (step) {
-						default:
-							return (
-								<div>
-									<form id='l__frm'>
-										<TextField
-											id='email'
-											label='Email'
-											variant='outlined'
-											type='text'
-											name='email'
-											required
-											className='Field'
-										/>
-										<br />
-										<Button
-											onClick={onNext}
-											variant='contained'
-											size='large'
-											color='primary'
-											name='firstName'
-											className='Field'
-										>
-											Next
-										</Button>
-									</form>
-									<br />
-									<p id='need__acc'>
-										Got an Account? <a href='/login'>Login</a>
-									</p>
-								</div>
-							);
+						// default:
+						// 	return (
+						// 		<div>
+						// 			<form id='l__frm'>
+						// 				<TextField
+						// 					id='email'
+						// 					label='Email'
+						// 					variant='outlined'
+						// 					type='text'
+						// 					name='email'
+						// 					required
+						// 					className='Field'
+						// 				/>
+						// 				<br />
+						// 				<Button
+						// 					onClick={onNext}
+						// 					variant='contained'
+						// 					size='large'
+						// 					color='primary'
+						// 					name='firstName'
+						// 					className='Field'
+						// 				>
+						// 					Next
+						// 				</Button>
+						// 			</form>
+						// 			<br />
+						// 			<p id='need__acc'>
+						// 				Got an Account? <a href='/login'>Login</a>
+						// 			</p>
+						// 		</div>
+						// 	);
 						case 1:
 							return (
 								<div>
@@ -96,10 +103,11 @@ const Register: FC = () => {
 											id='email'
 											label='Email'
 											variant='outlined'
-											type='text'
+											type='email'
 											name='email'
 											required
 											className='Field'
+											onChange={handleChange('email')}
 										/>
 										<br />
 										<Button
@@ -131,6 +139,7 @@ const Register: FC = () => {
 											name='firstName'
 											required
 											className='Field'
+											onChange={handleChange('fName')}
 										/>
 										<br />
 										<TextField
@@ -141,6 +150,7 @@ const Register: FC = () => {
 											name='lastName'
 											required
 											className='Field'
+											onChange={handleChange('lName')}
 										/>
 										<br />
 										<Button
@@ -165,13 +175,14 @@ const Register: FC = () => {
 								<div>
 									<form id='l__frm'>
 										<TextField
-											id='email'
-											label='Email'
+											id='password'
+											label='Password'
 											variant='outlined'
-											type='text'
-											name='firstName'
+											type='password'
+											name='password'
 											required
 											className='Field'
+											onChange={handleChange('password')}
 										/>
 										<br />
 										<Button
