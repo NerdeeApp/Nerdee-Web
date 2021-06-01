@@ -8,13 +8,12 @@ interface Props {}
 
 let cookies = new Cookies();
 let domain = 'api.nerdee.io';
-let debug = true;
 
 const Dashboard: FC<Props> = (props: any) => {
-	if (!cookies.get('heavy_auth_token') && !debug) return <Redirect path='*' to='/login' />;
+	if (!cookies.get('heavy_auth_token')) return <Redirect path='*' to='/login' />;
 
 	setInterval(() => {
-		if (!cookies.get('heavy_auth_token') && !debug) window.location.href = '/login';
+		if (!cookies.get('heavy_auth_token')) window.location.href = '/login';
 	}, 100);
 
 	let logout = () => {
