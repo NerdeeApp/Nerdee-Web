@@ -27,7 +27,6 @@ const Login: FC<props> = () => {
 			'Thanks to your incapability to comprehend the correct login details, I was unable to log you in. This can be fixed by using the correct details next time!',
 			'Well done, the login details are incorrect, again.',
 			'Do you remember them yet?',
-			'Test',
 		];
 
 		let insult = insults[Math.floor(Math.random() * insults.length)];
