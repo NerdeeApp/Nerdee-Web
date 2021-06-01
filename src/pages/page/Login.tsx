@@ -35,10 +35,9 @@ const Login: FC<props> = () => {
 			'Done yet?',
 			'I have all day! Try again if you want.',
 			'Keep trying, it might work at some point.',
-			"Did you try 'password123'?",
+			"Have you tried 'password123'?",
 			'Try using the password you use for everything.',
 			'Have you tried (insert password manager here)? It may speed this up for next time.',
-			'<a href="/account/reset">Reset Password?</a>',
 		];
 
 		let insult = insults[Math.floor(Math.random() * insults.length)];
