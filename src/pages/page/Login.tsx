@@ -1,6 +1,7 @@
 import { FC, SyntheticEvent, useState } from 'react';
 import { Button, TextField } from '@material-ui/core';
-import { Alert } from '@material-ui/lab';
+// import { Alert } from '@material-ui/lab';
+import { Alert } from '../../components';
 
 import '../../style/login.scss';
 import { Redirect } from 'react-router';
@@ -15,6 +16,23 @@ const Login: FC<props> = () => {
 	const [ password, setPassword ] = useState('');
 	const [ redirect, setRedirect ] = useState(false);
 	const [ valid, setValid ] = useState(true);
+	const [ message, setMessage ] = useState('');
+	const [ tries, setTries ] = useState(0);
+
+	let getMessage = () => {
+		setTries(tries + 1);
+		if (tries < 3) return setMessage('Invalid username/email or password.');
+
+		let insults = [
+			'Thanks to your incapability to comprehend the correct login details, I was unable to log you in. This can be fixed by using the correct details next time!',
+			'Well done, the login details are incorrect, again.',
+			'Do you remember them yet?',
+			'Test',
+		];
+
+		let insult = insults[Math.floor(Math.random() * insults.length)];
+		return setMessage(insult);
+	};
 
 	const submit = async (e: SyntheticEvent) => {
 		e.preventDefault();
@@ -34,7 +52,10 @@ const Login: FC<props> = () => {
 		})
 			.then((res) => {
 				res.json().then((data) => {
-					if (!data.Success) return setValid(false);
+					if (!data.Success) {
+						getMessage();
+						return setValid(false);
+					}
 
 					setRedirect(true);
 				});
@@ -80,7 +101,7 @@ const Login: FC<props> = () => {
 
 			<div id='login__frame'>
 				<h1 id='title'>LOGIN</h1>
-				{!valid ? <Alert severity='error'>Failed To Find User</Alert> : null}
+				{valid ? null : <Alert type='error'>{message}</Alert>}
 				<br />
 				<br />
 				<form onSubmit={submit} id='l__frm'>
