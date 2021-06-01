@@ -1,0 +1,36 @@
+"filename", "language", "TypeScript", "JSON", "Docker", "Markdown", "TypeScript React", "XML", "HTML", "SCSS", "comment", "blank", "total"
+"c:\xampp\htdocs\Projects\nerdee\Web\Dockerfile", "Docker", 0, 0, 10, 0, 0, 0, 0, 0, 0, 2, 12
+"c:\xampp\htdocs\Projects\nerdee\Web\README.md", "Markdown", 0, 0, 0, 50, 0, 0, 0, 0, 0, 10, 60
+"c:\xampp\htdocs\Projects\nerdee\Web\index.d.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"c:\xampp\htdocs\Projects\nerdee\Web\package.json", "JSON", 0, 47, 0, 0, 0, 0, 0, 0, 0, 1, 48
+"c:\xampp\htdocs\Projects\nerdee\Web\public\files\sitemap.xml", "XML", 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 12
+"c:\xampp\htdocs\Projects\nerdee\Web\public\images\SVG\logo.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\xampp\htdocs\Projects\nerdee\Web\public\images\SVG\placeholder.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\xampp\htdocs\Projects\nerdee\Web\public\images\icons\close.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\xampp\htdocs\Projects\nerdee\Web\public\images\icons\down.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\xampp\htdocs\Projects\nerdee\Web\public\index.html", "HTML", 0, 0, 0, 0, 0, 0, 40, 0, 15, 10, 65
+"c:\xampp\htdocs\Projects\nerdee\Web\public\manifest.json", "JSON", 0, 25, 0, 0, 0, 0, 0, 0, 0, 1, 26
+"c:\xampp\htdocs\Projects\nerdee\Web\src\App.tsx", "TypeScript React", 0, 0, 0, 0, 38, 0, 0, 0, 1, 12, 51
+"c:\xampp\htdocs\Projects\nerdee\Web\src\components\AcceptCookies.tsx", "TypeScript React", 0, 0, 0, 0, 18, 0, 0, 0, 0, 5, 23
+"c:\xampp\htdocs\Projects\nerdee\Web\src\components\Loading.tsx", "TypeScript React", 0, 0, 0, 0, 9, 0, 0, 0, 0, 2, 11
+"c:\xampp\htdocs\Projects\nerdee\Web\src\components\index.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\xampp\htdocs\Projects\nerdee\Web\src\components\navbar.tsx", "TypeScript React", 0, 0, 0, 0, 53, 0, 0, 0, 0, 10, 63
+"c:\xampp\htdocs\Projects\nerdee\Web\src\images\SVG\Blobs.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\xampp\htdocs\Projects\nerdee\Web\src\images\SVG\BlobsMobile.svg", "XML", 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\xampp\htdocs\Projects\nerdee\Web\src\index.tsx", "TypeScript React", 0, 0, 0, 0, 11, 0, 0, 0, 3, 2, 16
+"c:\xampp\htdocs\Projects\nerdee\Web\src\pages\index.tsx", "TypeScript React", 0, 0, 0, 0, 5, 0, 0, 0, 0, 1, 6
+"c:\xampp\htdocs\Projects\nerdee\Web\src\pages\page\Dashboard.tsx", "TypeScript React", 0, 0, 0, 0, 34, 0, 0, 0, 0, 9, 43
+"c:\xampp\htdocs\Projects\nerdee\Web\src\pages\page\Error404.tsx", "TypeScript React", 0, 0, 0, 0, 23, 0, 0, 0, 0, 3, 26
+"c:\xampp\htdocs\Projects\nerdee\Web\src\pages\page\Home.tsx", "TypeScript React", 0, 0, 0, 0, 65, 0, 0, 0, 0, 8, 73
+"c:\xampp\htdocs\Projects\nerdee\Web\src\pages\page\Login.tsx", "TypeScript React", 0, 0, 0, 0, 121, 0, 0, 0, 0, 14, 135
+"c:\xampp\htdocs\Projects\nerdee\Web\src\pages\page\Register.tsx", "TypeScript React", 0, 0, 0, 0, 278, 0, 0, 0, 1, 10, 289
+"c:\xampp\htdocs\Projects\nerdee\Web\src\react-app-env.d.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2
+"c:\xampp\htdocs\Projects\nerdee\Web\src\reportWebVitals.ts", "TypeScript", 13, 0, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"c:\xampp\htdocs\Projects\nerdee\Web\src\setupTests.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 4, 1, 6
+"c:\xampp\htdocs\Projects\nerdee\Web\src\style\error.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 36, 0, 17, 53
+"c:\xampp\htdocs\Projects\nerdee\Web\src\style\global.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 227, 31, 105, 363
+"c:\xampp\htdocs\Projects\nerdee\Web\src\style\home.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 135, 0, 58, 193
+"c:\xampp\htdocs\Projects\nerdee\Web\src\style\loading.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 19, 0, 4, 23
+"c:\xampp\htdocs\Projects\nerdee\Web\src\style\login.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 115, 0, 48, 163
+"c:\xampp\htdocs\Projects\nerdee\Web\tsconfig.json", "JSON", 0, 26, 0, 0, 0, 0, 0, 0, 0, 1, 27
+"Total", "-", 18, 98, 10, 50, 655, 18, 40, 532, 56, 340, 1817

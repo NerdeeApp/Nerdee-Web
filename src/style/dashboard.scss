@@ -1,0 +1,23 @@
+.container {
+    width: 35vw;
+    height: 90vh;
+
+    background-color: white;
+
+    position: relative;
+    left: 50%;
+    top: 10vh;
+
+    box-sizing: border-box;
+
+    transform: translateX(-50%);
+
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95vw;
+        height: 80vh;
+    }
+}
