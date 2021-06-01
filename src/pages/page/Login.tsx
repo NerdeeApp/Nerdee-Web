@@ -27,6 +27,18 @@ const Login: FC<props> = () => {
 			'Thanks to your incapability to comprehend the correct login details, I was unable to log you in. This can be fixed by using the correct details next time!',
 			'Well done, the login details are incorrect, again.',
 			'Do you remember them yet?',
+			'How many tries will it take?',
+			'Lets try this one last time.',
+			'Try a cup of coffee',
+			'Have you tried drinking some tea or coffee? It might help.',
+			'Tried enough yet?',
+			'Done yet?',
+			'I have all day! Try again if you want.',
+			'Keep trying, it might work at some point.',
+			"Did you try 'password123'?",
+			'Try using the password you use for everything.',
+			'Have you tried (insert password manager here)? It may speed this up for next time.',
+			'<a href="/account/reset">Reset Password?</a>',
 		];
 
 		let insult = insults[Math.floor(Math.random() * insults.length)];
