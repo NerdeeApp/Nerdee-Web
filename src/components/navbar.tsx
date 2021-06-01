@@ -1,9 +1,7 @@
-import React, { FC, useCallback, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { FC, useState } from 'react';
 
 export const Navbar: FC<any> = () => {
 	const [ sideNavState, setSideNavState ] = useState(false);
-	const history = useHistory();
 
 	const loginSend = () => {
 		return (window.location.href = '/login');

@@ -31,7 +31,7 @@ const Login: FC<props> = () => {
 				password,
 			}),
 			credentials: 'include',
-		}) /*.then((res) => res.json().then((data) => console.log(data)));*/
+		})
 			.then((res) => {
 				res.json().then((data) => {
 					if (!data.Success) return setValid(false);

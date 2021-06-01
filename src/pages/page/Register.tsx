@@ -1,38 +1,28 @@
-import { FC, useState, SyntheticEvent } from 'react';
-import { Button, TextField } from '@material-ui/core';
+import { FC, useState } from 'react';
+import { Button, MenuItem, TextField } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 import {} from '@material-ui/pickers';
-import Cookies from 'universal-cookie/es6';
-import { Redirect } from 'react-router-dom';
 import '../../style/login.scss';
-
-let cookies = new Cookies();
-
-const domain = 'api.nerdee.io';
 
 const Register: FC = () => {
 	const [ step, setStep ] = useState(1);
-	let [ inputs, setInputs ] = useState({
-		email: '',
-		username: '',
-		fName: '',
-		lName: '',
-		password: '',
-		dob: '',
-		gender: '',
-		sexuality: '',
-	});
+	// eslint-disable-next-line
+	const [ error, setError ] = useState(false);
 
 	const onNext = () => {
-		return setStep(step + 1);
+		setStep(step + 1);
+		return true;
 	};
 
 	const onReturn = () => {
-		return setStep(step + 1);
+		return setStep(step - 1);
 	};
 
-	let handleChange = (property: any) => (e: any) => {
-		console.log(inputs);
+	let handleChange = (property: any) => (e: any) => {};
+
+	let checkDetail = (prop: string) => {
+		onNext();
+		return true;
 	};
 
 	return (
@@ -62,39 +52,9 @@ const Register: FC = () => {
 
 			<div id='login__frame'>
 				<h1 id='title'>REGISTER</h1>
+				{error ? <Alert security='error'>Error</Alert> : null}
 				{(() => {
 					switch (step) {
-						// default:
-						// 	return (
-						// 		<div>
-						// 			<form id='l__frm'>
-						// 				<TextField
-						// 					id='email'
-						// 					label='Email'
-						// 					variant='outlined'
-						// 					type='text'
-						// 					name='email'
-						// 					required
-						// 					className='Field'
-						// 				/>
-						// 				<br />
-						// 				<Button
-						// 					onClick={onNext}
-						// 					variant='contained'
-						// 					size='large'
-						// 					color='primary'
-						// 					name='firstName'
-						// 					className='Field'
-						// 				>
-						// 					Next
-						// 				</Button>
-						// 			</form>
-						// 			<br />
-						// 			<p id='need__acc'>
-						// 				Got an Account? <a href='/login'>Login</a>
-						// 			</p>
-						// 		</div>
-						// 	);
 						case 1:
 							return (
 								<div>
@@ -111,7 +71,7 @@ const Register: FC = () => {
 										/>
 										<br />
 										<Button
-											onClick={onNext}
+											onClick={() => checkDetail('email')}
 											variant='contained'
 											size='large'
 											color='primary'
@@ -154,6 +114,16 @@ const Register: FC = () => {
 										/>
 										<br />
 										<Button
+											onClick={onReturn}
+											variant='contained'
+											size='large'
+											color='secondary'
+											name='firstName'
+											className='Field'
+										>
+											Previous
+										</Button>
+										<Button
 											onClick={onNext}
 											variant='contained'
 											size='large'
@@ -185,6 +155,112 @@ const Register: FC = () => {
 											onChange={handleChange('password')}
 										/>
 										<br />
+										<Button
+											onClick={onReturn}
+											variant='contained'
+											size='large'
+											color='secondary'
+											name='firstName'
+											className='Field'
+										>
+											Previous
+										</Button>
+										<Button
+											onClick={onNext}
+											variant='contained'
+											size='large'
+											color='primary'
+											name='firstName'
+											className='Field'
+										>
+											Next
+										</Button>
+									</form>
+									<br />
+									<p id='need__acc'>
+										Got an Account? <a href='/login'>Login</a>
+									</p>
+								</div>
+							);
+						case 4:
+							return (
+								<div>
+									<form id='l__frm'>
+										<TextField id='select' label='Sexuality' name='sexuality' select>
+											<MenuItem value='heterosexual'>Heterosexual/Striaght</MenuItem>
+											<MenuItem value='bisexual'>Bisexual</MenuItem>
+											<MenuItem value='homosexual'>Homosexual</MenuItem>
+										</TextField>
+										<br />
+										<TextField id='select' label='Gender' name='gender' select>
+											<MenuItem value='Male'>Male</MenuItem>
+											<MenuItem value='Female'>Female</MenuItem>
+											<MenuItem value='other'>Other</MenuItem>
+										</TextField>
+										<br />
+										<Button
+											onClick={onReturn}
+											variant='contained'
+											size='large'
+											color='secondary'
+											name='firstName'
+											className='Field'
+										>
+											Previous
+										</Button>
+										<Button
+											onClick={onNext}
+											variant='contained'
+											size='large'
+											color='primary'
+											name='firstName'
+											className='Field'
+										>
+											Next
+										</Button>
+									</form>
+									<br />
+									<p id='need__acc'>
+										Got an Account? <a href='/login'>Login</a>
+									</p>
+								</div>
+							);
+						case 5:
+							return (
+								<div>
+									<form id='l__frm'>
+										<TextField
+											id='gender'
+											label='Gender'
+											variant='outlined'
+											type='text'
+											name='gender'
+											required
+											className='Field'
+											onChange={handleChange('gender')}
+										/>
+										<br />
+										<TextField
+											id='sexuality'
+											label='Gender'
+											variant='outlined'
+											type='text'
+											name='gender'
+											required
+											className='Field'
+											onChange={handleChange('gender')}
+										/>
+										<br />
+										<Button
+											onClick={onReturn}
+											variant='contained'
+											size='large'
+											color='secondary'
+											name='firstName'
+											className='Field'
+										>
+											Previous
+										</Button>
 										<Button
 											onClick={onNext}
 											variant='contained'
