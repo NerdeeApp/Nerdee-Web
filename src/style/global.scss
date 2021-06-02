@@ -39,6 +39,9 @@ html {
 	background-color: $background;
 
 	width: 100vw;
+	height: 100%;
+
+	min-height: 100vh;
 
 	overflow-x: hidden;
 }
@@ -292,6 +295,19 @@ nav {
 	overflow-y: scroll;
 }
 
+.cookieHolder {
+	.background {
+		position: absolute;
+		top: 0;
+
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.5);
+
+		z-index: 999998;
+	}
+}
+
 .CookieBanner {
 	width: 100vw;
 	height: 10vh;
@@ -303,6 +319,10 @@ nav {
 	bottom: 0;
 
 	z-index: 999999;
+
+	box-sizing: border-box;
+
+	padding: 20px;
 
 	color: white;
 
@@ -335,11 +355,42 @@ nav {
 	}
 
 	p {
-		height: 0vh;
-		top: 25%;
-		left: 10%;
+		width: 75%;
+		height: 100%;
+
+		padding: 0;
+		margin: 0;
 
 		position: absolute;
+	}
+
+	.background {
+		position: absolute;
+		top: 0;
+
+		width: 100vw;
+		height: 100vh;
+		background-color: #555;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.CookieBanner {
+		height: 30vh;
+
+		button {
+			position: relative;
+
+			top: 10%;
+			left: 50%;
+		}
+
+		p {
+			position: relative;
+
+			width: 100%;
+			height: 70%;
+		}
 	}
 }
 
