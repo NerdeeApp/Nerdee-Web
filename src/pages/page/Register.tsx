@@ -10,6 +10,7 @@ export default class Register extends Component {
 
 		// ? Form info
 		email: '',
+		username: '',
 		fName: '',
 		lName: '',
 		phone: '',
@@ -46,6 +47,23 @@ export default class Register extends Component {
 
 		console.log(regex.test(email));
 		return regex.test(email);
+	};
+
+	submit = async () => {
+		let { username, password } = this.state;
+		await fetch('https://api.nerdee.io/user/action/register', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'Access-Control-Allow-Origin': 'https://nerdee.io',
+				'Access-Control-Allow-Credentials': 'true',
+			},
+			body: JSON.stringify({
+				username,
+				password,
+			}),
+			credentials: 'include',
+		});
 	};
 
 	render() {
