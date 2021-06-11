@@ -1,6 +1,5 @@
 import { FC, SyntheticEvent, useState } from 'react';
 import { Button, TextField } from '@material-ui/core';
-// import { Alert } from '@material-ui/lab';
 import { Alert } from '../../components';
 
 import '../../style/login.scss';
@@ -9,9 +8,9 @@ import Cookies from 'universal-cookie/es6';
 
 let cookies = new Cookies();
 
-interface props {}
+interface Props {}
 
-const Login: FC<props> = () => {
+const Login: FC<Props> = () => {
 	const [ username, setUsername ] = useState('');
 	const [ password, setPassword ] = useState('');
 	const [ redirect, setRedirect ] = useState(false);
