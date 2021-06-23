@@ -37,6 +37,7 @@ const Login: FC<Props> = () => {
 			"Have you tried 'password123'?",
 			'Try using the password you use for everything.',
 			'Have you tried (insert password manager here)? It may speed this up for next time.',
+			'Done?',
 		];
 
 		let insult = insults[Math.floor(Math.random() * insults.length)];
