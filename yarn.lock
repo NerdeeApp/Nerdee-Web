@@ -9371,6 +9371,13 @@ react-transition-group@^4.0.0, react-transition-group@^4.4.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
+react-use-scroll-snap@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-use-scroll-snap/-/react-use-scroll-snap-0.0.3.tgz#a240682990a121ce461c89de90b4605c920f939e"
+  integrity sha512-wuyfiSwoVwuRYgsKPt9WQ5+JlagVFOhMVA5lOlbpkqBkL1FTTOFtedYrneEsbDBHCef5PV4p2Ia20cH+QyCa9Q==
+  dependencies:
+    tweezer.js "^1.5.0"
+
 react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
@@ -10927,6 +10934,11 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
+
+tweezer.js@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/tweezer.js/-/tweezer.js-1.5.0.tgz#ca50ac5215022203fd3be4d28617e8e2305f5c0c"
+  integrity sha512-aSiJz7rGWNAQq7hjMK9ZYDuEawXupcCWgl3woQQSoDP2Oh8O4srWb/uO1PzzHIsrPEOqrjJ2sUb9FERfzuBabQ==
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
