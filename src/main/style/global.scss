@@ -49,7 +49,7 @@ header {
 	}
 
 	#right {
-		width: 30%;
+		width: 40%;
 		height: 100%;
 
 		display: flex;
@@ -74,7 +74,7 @@ header {
 
 			text-decoration: none;
 
-			width: 5vw;
+			width: 7.5vw;
 			height: 100%;
 
 			display: flex;
@@ -100,7 +100,7 @@ header {
 			background-color: #00000055;
 			.bottom {
 				height: 3px;
-				width: 5vw;
+				width: 7.5vw;
 			}
 		}
 	}
@@ -109,7 +109,7 @@ header {
 }
 
 .small {
-	background-color: #101010 !important;
+	background-color: #101010;
 }
 
 .container {
@@ -117,7 +117,7 @@ header {
 	top: 0;
 
 	width: 100vw;
-	height: calc(100% - 10vh);
+	height: calc(100% - 8vh);
 
 	min-height: 100vh;
 	max-width: 100%;
@@ -145,8 +145,11 @@ header {
 			background-color: #101010;
 
 			#headerImage {
+				height: 100vh;
 				width: 100vw;
-				filter: brightness(40%);
+				filter: brightness(50%);
+
+				object-fit: cover;
 			}
 
 			#imageOverlay {
@@ -196,7 +199,7 @@ header {
 
 					border: 0;
 
-					border-radius: 5px;
+					border-radius: 50vh;
 
 					font-size: 2em;
 
@@ -213,10 +216,10 @@ header {
 			}
 		}
 		&:nth-of-type(2) {
-			height: 92vh;
+			height: 100vh;
 			position: relative;
 
-			top: 92vh;
+			top: calc(100vh + 5vh);
 
 			padding: 10px;
 			box-sizing: border-box;
@@ -227,11 +230,13 @@ header {
 
 			svg {
 				width: calc(100% + 20px);
-				height: 5%;
+				height: 5vh;
 
 				position: relative;
-				top: -5%;
+				top: -5vh;
 				left: 0;
+
+				color: #fff;
 
 				margin: -10px;
 
@@ -241,15 +246,30 @@ header {
 				}
 			}
 
-			#aboutUs {
+			h1 {
 				font-size: 4em;
+				text-align: center;
 				position: relative;
-				top: -5%;
-				right: 0;
-				text-align: right;
+				top: -0.5em;
 
-				margin-right: 20px;
+				font-family: "Montserrat", sans-serif;
+				font-weight: 800;
 			}
+		}
+
+		&:nth-of-type(3) {
+			scroll-snap-stop: always;
+			width: 100%;
+			height: 25vh;
+			position: relative;
+			top: 100vh;
+			background-color: #212121;
+
+			color: #fff;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 	}
 }
@@ -273,4 +293,99 @@ header {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
+}
+
+@media screen and (max-width: 768px) {
+	header {
+		#right {
+			justify-content: flex-end;
+			box-sizing: border-box;
+			padding-right: 25px;
+
+			a {
+				display: none;
+			}
+
+			#burger {
+				height: calc(8vh - 20px);
+				aspect-ratio: 1/1;
+
+				float: right;
+
+				box-sizing: border-box;
+				padding: 2px;
+
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				flex-direction: column;
+
+				.bun {
+					width: 100%;
+					height: 100%;
+					display: flex;
+					justify-content: space-evenly;
+					align-items: center;
+					flex-direction: column;
+
+					overflow: hidden;
+
+					.burgers {
+						width: 100%;
+						height: 12.5%;
+						background-color: #ffffff;
+
+						border-radius: 150px;
+
+						transition: all 250ms ease;
+					}
+
+					svg {
+						display: none;
+					}
+				}
+			}
+
+			.clicked {
+				justify-content: center;
+				align-items: center;
+
+				.bun {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+
+					.burgers {
+						position: relative;
+
+						&:nth-of-type(1) {
+							top: 25%;
+							transform: rotate(45deg);
+						}
+						&:nth-of-type(2) {
+							background-color: transparent !important;
+							transform: translateX(-10vw);
+						}
+						&:nth-of-type(3) {
+							top: -25%;
+							transform: rotate(-45deg);
+						}
+					}
+				}
+			}
+
+			width: 100vw;
+		}
+	}
+
+	.container {
+		section {
+			:nth-of-type(1) {
+				#title {
+					width: 100% !important;
+				}
+			}
+		}
+	}
 }

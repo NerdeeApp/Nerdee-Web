@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import useScrollSnap from "react-use-scroll-snap";
 import { Button } from "../components";
 
 const Home = () => {
 	let [small, setSmall] = useState(false);
+	let [burgerClicked, setBurgerClicked] = useState(true);
+
 	useEffect(() => {
 		if (typeof window !== undefined) {
 			window.addEventListener("scroll", () => {
@@ -23,28 +23,42 @@ const Home = () => {
 					</a>
 				</div>
 				<div id='right'>
-					<a href='#'>
+					<a href='#home' onClick={() => window.scrollTo(0, 0)}>
 						Home
 						<div className='bottom'></div>
 					</a>
-					<a href='#'>
+					<a href='#about'>
 						About Us
 						<div className='bottom'></div>
 					</a>
-					<a href='#'>
+					<a href='#contact'>
 						Contact
 						<div className='bottom'></div>
 					</a>
+					<div
+						id='burger'
+						className={burgerClicked ? "clicked" : ""}
+						onClick={() => {
+							setBurgerClicked(burgerClicked ? false : true);
+							console.log("clicked");
+						}}
+					>
+						<div className='bun'>
+							<div className='burgers' />
+							<div className='burgers' />
+							<div className='burgers' />
+						</div>
+					</div>
 				</div>
 			</header>
 
 			<div className='container'>
-				<section>
+				<section id='home'>
 					<img src='/images/PNG/title.png' alt='logo text' id='title' />
 
 					<div id='buttonContainer'>
 						<Button id='apple' onClick={() => alert("Not available yet")}>
-							Apple
+							App Store
 						</Button>
 						<Button id='playstore' onClick={() => alert("Not available yet")}>
 							Google Play
@@ -54,7 +68,7 @@ const Home = () => {
 					<div id='imageOverlay'></div>
 					<img src='/images/PNG/splash.jpg' alt='' id='headerImage' />
 				</section>
-				<section>
+				<section id='about'>
 					<svg
 						preserveAspectRatio='none'
 						width='100%'
@@ -63,7 +77,11 @@ const Home = () => {
 					>
 						<path d='M 0 5 L 100 5 L 100 0 L 0 5' fill='#151515'></path>
 					</svg>
-					<h1 id='aboutUs'>About Us</h1>
+					<h1>About Us</h1>
+				</section>
+
+				<section className='footer'>
+					<h1>&copy; Nerdee ltd {new Date().getFullYear()}</h1>
 				</section>
 			</div>
 		</>
