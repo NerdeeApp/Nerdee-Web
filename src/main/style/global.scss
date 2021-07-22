@@ -157,12 +157,27 @@ header {
 				width: 100%;
 				height: 100%;
 
-				background-color: #5d00ff77;
+				background: -moz-linear-gradient(
+					180deg,
+					rgba(93, 0, 255, 0.7) 0%,
+					rgba(27, 0, 74, 0.7) 100%
+				);
+				background: -webkit-linear-gradient(
+					180deg,
+					rgba(93, 0, 255, 0.7) 0%,
+					rgba(27, 0, 74, 0.7) 100%
+				);
+				background: linear-gradient(
+					180deg,
+					rgba(93, 0, 255, 0.7) 0%,
+					rgba(27, 0, 74, 0.7) 100%
+				);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5d00ff",endColorstr="#1b004a",GradientType=1);
 
 				position: absolute;
 			}
 
-			#title {
+			#titleImage {
 				position: absolute;
 
 				width: 50%;
@@ -175,7 +190,7 @@ header {
 			}
 
 			#buttonContainer {
-				width: 50%;
+				width: 60%;
 				height: 10vh;
 
 				position: absolute;
@@ -194,14 +209,14 @@ header {
 				box-sizing: border-box;
 
 				Button {
-					width: 40%;
+					width: 45%;
 					height: 100%;
 
 					border: 0;
 
 					border-radius: 50vh;
 
-					font-size: 2em;
+					font-size: 2rem;
 
 					font-family: "Open Sans", sans-serif;
 					font-weight: 500;
@@ -238,6 +253,10 @@ header {
 
 				color: #fff;
 
+				path {
+					fill: #151515;
+				}
+
 				margin: -10px;
 
 				path {
@@ -252,7 +271,7 @@ header {
 				position: relative;
 				top: -0.5em;
 
-				font-family: "Montserrat", sans-serif;
+				font-family: "Open Sans", sans-serif;
 				font-weight: 800;
 			}
 		}
@@ -339,10 +358,6 @@ header {
 
 						transition: all 250ms ease;
 					}
-
-					svg {
-						display: none;
-					}
 				}
 			}
 
@@ -381,9 +396,41 @@ header {
 
 	.container {
 		section {
-			:nth-of-type(1) {
-				#title {
-					width: 100% !important;
+			&:nth-of-type(1) {
+				box-sizing: border-box;
+
+				#titleImage {
+					width: 100%;
+					top: 35%;
+
+					transform: translate(-50%, -100%);
+				}
+
+				#buttonContainer {
+					height: 30vh;
+					width: 100%;
+
+					top: 40%;
+
+					flex-direction: column;
+					justify-content: space-evenly;
+					align-items: center;
+
+					Button {
+						width: 100%;
+						height: 10vh;
+					}
+				}
+			}
+
+			&:nth-of-type(2) {
+				padding-top: 50px;
+				#triangle {
+					display: none;
+
+					path {
+						fill: rgba(0, 0, 0, 0);
+					}
 				}
 			}
 		}

@@ -54,7 +54,7 @@ const Home = () => {
 
 			<div className='container'>
 				<section id='home'>
-					<img src='/images/PNG/title.png' alt='logo text' id='title' />
+					<img src='/images/PNG/title.png' alt='logo text' id='titleImage' />
 
 					<div id='buttonContainer'>
 						<Button id='apple' onClick={() => alert("Not available yet")}>
@@ -74,8 +74,9 @@ const Home = () => {
 						width='100%'
 						height='5%'
 						viewBox='0 0 100 5'
+						id='triangle'
 					>
-						<path d='M 0 5 L 100 5 L 100 0 L 0 5' fill='#151515'></path>
+						<path d='M 0 5 L 100 5 L 100 0 L 0 5'></path>
 					</svg>
 					<h1>About Us</h1>
 				</section>
