@@ -1,0 +1,16 @@
+{
+    "Create a new redirect": {
+        "prefix": "redir",
+        "body": [
+            "<Redirect from=\"${1:/}\" to=\"${2:component}\">"
+        ],
+        "description": "Creates a new redirect"
+    },
+    "Creates a new redirect": {
+        "prefix": "redir",
+        "body": [
+            "<Redirect from=\"${1:/}\" to=\"${2:component}\">"
+        ],
+        "description": "Creates a new redirect"
+    }
+}
