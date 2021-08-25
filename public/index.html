@@ -2,7 +2,18 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%PUBLIC_URL%/images/SVG/logo.svg" />
+
+		<link
+			rel="icon"
+			href="%PUBLIC_URL%/images/SVG/logo.svg"
+			id="logo-scheme-light"
+		/>
+		<link
+			rel="icon"
+			href="%PUBLIC_URL%/images/SVG/logoDark.svg"
+			id="logo-scheme-dark"
+		/>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#5D00FF" />
 		<meta name="description" content="A dating app for Tech Enthusiasts" />
@@ -79,3 +90,22 @@
 		<div id="root"></div>
 	</body>
 </html>
+
+<script>
+	let logoSchemeLight = document.querySelector("link#logo-scheme-light");
+	let logoSchemeDark = document.querySelector("link#logo-scheme-dark");
+
+	let matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+	matchMedia.addListener(onUpdate);
+	onUpdate();
+
+	let onUpdate = () => {
+		if (matchMedia.matches) {
+			logoSchemeLight.remove();
+			return document.head.append(logoSchemeDark);
+		}
+
+		document.head.append(logoSchemeLight);
+		return logoSchemeDark.remove();
+	};
+</script>

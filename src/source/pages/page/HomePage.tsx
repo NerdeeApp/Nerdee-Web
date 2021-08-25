@@ -6,6 +6,7 @@ class HomePage extends Component {
 	state = {
 		burger_active: false,
 		logoHovered: false,
+		contactModalVisible: false,
 	};
 
 	render() {
@@ -23,25 +24,41 @@ class HomePage extends Component {
 						}}
 					>
 						{this.state.logoHovered ? (
-							<img src='/images/PNG/titlePurple.png' />
+							<img src='/images/PNG/titlePurple.png' className='logoWide' />
 						) : (
-							<img src='/images/PNG/title.png' />
+							<img src='/images/PNG/title.png' className='logoWide' />
 						)}
+
+						<img src='/images/SVG/logo.svg' alt='logo' className='logoSmall' />
 					</a>
 
-					<div
-						className='burger_container'
+					<a
+						className='link_contact primary_button'
 						onClick={() => {
-							this.setState({ burger_active: !this.state.burger_active });
+							this.setState({
+								contactModalVisible: !this.state.contactModalVisible,
+							});
 						}}
 					>
-						<div
-							className={
-								!this.state.burger_active ? `burger` : `burger burger_active`
-							}
-						/>
-					</div>
+						Contact
+					</a>
 				</nav>
+				<div
+					className={
+						this.state.contactModalVisible
+							? "contactModal visible"
+							: "contactModal hidden"
+					}
+				>
+					<div className='container'>
+						<h1 id='contactTitle'>Contact Us</h1>
+						<a className='primary_button'>Cancel</a>
+						<a className='primary_button' onClick={() => alert("Jud gai")}>
+							Send
+						</a>
+					</div>
+					<div className='background'></div>
+				</div>
 				<main></main>
 			</>
 		);
