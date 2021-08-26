@@ -7,6 +7,32 @@ class HomePage extends Component {
 		burger_active: false,
 		logoHovered: false,
 		contactModalVisible: false,
+		contactSubmitError: false,
+		contactFormData: {
+			email: "example@example.com",
+			name: "",
+			phone: "",
+			body: "",
+		},
+	};
+
+	handleContactSubmit = async () => {
+		let r = await fetch("", {
+			method: "POST",
+			mode: "cors",
+			credentials: "same-origin",
+			cache: "no-cache",
+			headers: {
+				"Content-Type": "application/json",
+			},
+
+			body: JSON.stringify({
+				email: this.state.contactFormData.email,
+				name: this.state.contactFormData.name,
+				phone: this.state.contactFormData.phone,
+				body: this.state.contactFormData.body,
+			}),
+		});
 	};
 
 	render() {
@@ -52,10 +78,28 @@ class HomePage extends Component {
 				>
 					<div className='container'>
 						<h1 id='contactTitle'>Contact Us</h1>
-						<a className='primary_button'>Cancel</a>
-						<a className='primary_button' onClick={() => alert("Jud gai")}>
-							Send
+						<form onSubmit={this.handleContactSubmit}>
+							<input type='email' placeholder='email'></input>
+							<br />
+							<input type='text' placeholder='name'></input>
+							<br />
+							<input type='tel' placeholder='phone'></input>
+							<br />
+							<textarea
+								style={{ resize: "none", width: "100%", height: 200 }}
+							></textarea>
+						</form>
+						<a
+							className='secondary_button contact_button'
+							onClick={() =>
+								this.setState({
+									contactModalVisible: !this.state.contactModalVisible,
+								})
+							}
+						>
+							Cancel
 						</a>
+						<a className='primary_button contact_button'>Send</a>
 					</div>
 					<div className='background'></div>
 				</div>
