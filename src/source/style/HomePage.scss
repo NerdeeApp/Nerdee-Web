@@ -119,7 +119,7 @@ main {
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 719px) {
 	nav {
 		top: 1vh;
 		padding-left: 20px !important;
@@ -133,38 +133,27 @@ main {
 			display: none !important;
 		}
 
-		.burger_container {
-			right: 40px !important;
+		.link_contact {
+			right: 20px;
 		}
+	}
 
-		.sidenav {
-			height: calc(100vh - (1vh - 8vh));
-			width: 100vw;
+	.contactModal {
+		.container {
+			width: calc(100vw - 2em);
+			height: 75vh;
 		}
 	}
 }
 
-@media screen and (max-width: 1200px) and (min-width: 769px) {
+@media screen and (min-width: 720px) {
 	nav {
-		top: 1vh;
-		padding-left: 20px !important;
-		padding-right: 20px !important;
-
 		.logoSmall {
-			display: block !important;
+			display: none;
 		}
 
 		.logoWide {
-			display: none !important;
-		}
-
-		.burger_container {
-			right: 40px !important;
-		}
-
-		.sidenav {
-			height: calc(100vh - (1vh - 8vh));
-			width: 100vw;
+			display: block;
 		}
 	}
 }
