@@ -70,7 +70,8 @@ class HomePage extends Component {
 				Math.floor(scrollFraction * frameCount)
 			);
 
-			requestAnimationFrame(() => updateImage(frameIndex));
+			if (frameIndex < frameCount)
+				requestAnimationFrame(() => updateImage(frameIndex));
 		});
 
 		const preloadImages = () => {
