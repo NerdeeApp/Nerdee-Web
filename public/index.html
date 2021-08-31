@@ -92,13 +92,6 @@
 </html>
 
 <script>
-	let logoSchemeLight = document.querySelector("link#logo-scheme-light");
-	let logoSchemeDark = document.querySelector("link#logo-scheme-dark");
-
-	let matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
-	matchMedia.addListener(onUpdate);
-	onUpdate();
-
 	let onUpdate = () => {
 		if (matchMedia.matches) {
 			logoSchemeLight.remove();
@@ -108,4 +101,12 @@
 		document.head.append(logoSchemeLight);
 		return logoSchemeDark.remove();
 	};
+
+	let logoSchemeLight = document.querySelector("link#logo-scheme-light");
+	let logoSchemeDark = document.querySelector("link#logo-scheme-dark");
+
+	let matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+
+	matchMedia.addListener(onUpdate);
+	onUpdate();
 </script>

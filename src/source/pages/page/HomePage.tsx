@@ -44,9 +44,9 @@ class HomePage extends Component {
 		const currentFrame = (index: number) =>
 			`/images/PNG/phoneSequence/phone_sequence_${index
 				.toString()
-				.padStart(3, "0")}.png`;
+				.padStart(3, "0")}.png.webp`;
 
-		const frameCount = 175;
+		const frameCount = 174;
 		canvas.height = 1080;
 		canvas.width = 1920;
 		const img = new Image();
