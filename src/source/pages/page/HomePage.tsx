@@ -47,10 +47,19 @@ class HomePage extends Component {
 				.padStart(3, "0")}.png.webp`;
 
 		const frameCount = 174;
-		canvas.height = 1080;
-		canvas.width = 1920;
 		const img = new Image();
 		img.src = currentFrame(0);
+
+		const preloadImages = () => {
+			for (let i = 0; i < frameCount; i++) {
+				const img = new Image();
+				img.src = currentFrame(i);
+			}
+		};
+		preloadImages();
+
+		canvas.height = 1080;
+		canvas.width = 1920;
 
 		img.onload = () => {
 			context.drawImage(img, 0, 0);
@@ -73,15 +82,6 @@ class HomePage extends Component {
 			if (frameIndex < frameCount)
 				requestAnimationFrame(() => updateImage(frameIndex));
 		});
-
-		const preloadImages = () => {
-			for (let i = 0; i < frameCount + 1; i++) {
-				const img = new Image();
-				img.src = currentFrame(i);
-			}
-		};
-
-		preloadImages();
 	}
 
 	render() {
