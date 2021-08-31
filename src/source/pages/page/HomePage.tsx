@@ -75,7 +75,7 @@ class HomePage extends Component {
 		});
 
 		const preloadImages = () => {
-			for (let i = 0; i < frameCount; i++) {
+			for (let i = 0; i < frameCount + 1; i++) {
 				const img = new Image();
 				img.src = currentFrame(i);
 			}
