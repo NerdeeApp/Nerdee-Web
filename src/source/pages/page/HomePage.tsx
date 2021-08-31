@@ -35,6 +35,25 @@ class HomePage extends Component {
 		});
 	};
 
+	componentDidMount() {
+		const html = document.documentElement;
+		const canvas: HTMLCanvasElement | any =
+			document.querySelector(".phone-scrolling");
+		const context = canvas.getContext("2d");
+
+		const currentFrame = (index: number) =>
+			`https://nerdee.io/images/PNG/phoneSequence/${index
+				.toString()
+				.padStart(3, "0")}.jpg`;
+
+		const frameCount = 175;
+		canvas.height = 1080;
+		canvas.width = 1920;
+		const img = new Image();
+		img.src = currentFrame(0);
+		console.log(img);
+	}
+
 	render() {
 		return (
 			<>
@@ -103,7 +122,16 @@ class HomePage extends Component {
 					</div>
 					<div className='background'></div>
 				</div>
-				<main></main>
+				<main>
+					<section className='container'>
+						<div className='content'>
+							<h1>Hello World!</h1>
+							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+						</div>
+					</section>
+
+					<canvas className='phone-scrolling'></canvas>
+				</main>
 			</>
 		);
 	}
