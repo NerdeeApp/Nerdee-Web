@@ -42,16 +42,45 @@ class HomePage extends Component {
 		const context = canvas.getContext("2d");
 
 		const currentFrame = (index: number) =>
-			`https://nerdee.io/images/PNG/phoneSequence/${index
+			`/images/PNG/phoneSequence/phone_sequence_${index
 				.toString()
-				.padStart(3, "0")}.jpg`;
+				.padStart(3, "0")}.png`;
 
 		const frameCount = 175;
 		canvas.height = 1080;
 		canvas.width = 1920;
 		const img = new Image();
 		img.src = currentFrame(0);
-		console.log(img);
+
+		img.onload = () => {
+			context.drawImage(img, 0, 0);
+		};
+
+		const updateImage = (index: number) => {
+			img.src = currentFrame(index);
+			context.drawImage(img, 0, 0);
+		};
+
+		window.addEventListener("scroll", () => {
+			const scrollTop = html.scrollTop;
+			const maxScrollTop = html.scrollHeight - window.innerHeight;
+			const scrollFraction = scrollTop / maxScrollTop;
+			const frameIndex = Math.min(
+				frameCount - 1,
+				Math.floor(scrollFraction * frameCount)
+			);
+
+			requestAnimationFrame(() => updateImage(frameIndex));
+		});
+
+		const preloadImages = () => {
+			for (let i = 0; i < frameCount; i++) {
+				const img = new Image();
+				img.src = currentFrame(i);
+			}
+		};
+
+		preloadImages();
 	}
 
 	render() {
@@ -125,8 +154,24 @@ class HomePage extends Component {
 				<main>
 					<section className='container'>
 						<div className='content'>
-							<h1>Hello World!</h1>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+							<div className='contentBox'>
+								<h1>NERDEE</h1>
+								<p>The dating app for tech enthusiasts.</p>
+							</div>
+						</div>
+
+						<div className='content'>
+							<div className='contentBox'>
+								<h1>Hello World!</h1>
+								<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+							</div>
+						</div>
+
+						<div className='content'>
+							<div className='contentBox'>
+								<h1>Hello World!</h1>
+								<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+							</div>
 						</div>
 					</section>
 
