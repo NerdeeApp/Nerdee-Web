@@ -17,7 +17,7 @@ class HomePage extends Component {
 	};
 
 	handleContactSubmit = async () => {
-		let r = await fetch("", {
+		await fetch("", {
 			method: "POST",
 			mode: "cors",
 			credentials: "same-origin",
@@ -38,7 +38,7 @@ class HomePage extends Component {
 	componentDidMount() {
 		const html = document.documentElement;
 		const canvas: HTMLCanvasElement | any =
-			document.querySelector(".phone-scrolling");
+			document!.querySelector(".phone-scrolling");
 		const context = canvas.getContext("2d");
 
 		const currentFrame = (index: number) =>
@@ -158,6 +158,7 @@ class HomePage extends Component {
 							<div className='contentBox'>
 								<h1>NERDEE</h1>
 								<p>The dating app for tech enthusiasts.</p>
+								<div className='full-grad'></div>
 							</div>
 						</div>
 
