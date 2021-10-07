@@ -154,6 +154,7 @@ class HomePage extends Component {
 				</div>
 				<main>
 					<section className='container'>
+						<div className='fixed-grad'></div>
 						<div className='content'>
 							<div className='contentBox'>
 								<h1>NERDEE</h1>
